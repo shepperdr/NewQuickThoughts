@@ -8,20 +8,44 @@
 
 /* Begin PBXBuildFile section */
 		9112D9001C0E608F0086AF69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9112D8FF1C0E608F0086AF69 /* AppDelegate.swift */; };
-		9112D9021C0E608F0086AF69 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9112D9011C0E608F0086AF69 /* ViewController.swift */; };
 		9112D9051C0E608F0086AF69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9112D9031C0E608F0086AF69 /* Main.storyboard */; };
 		9112D9071C0E608F0086AF69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9112D9061C0E608F0086AF69 /* Assets.xcassets */; };
 		9112D90A1C0E608F0086AF69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9112D9081C0E608F0086AF69 /* LaunchScreen.storyboard */; };
+		9112D9121C0E60ED0086AF69 /* JournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9112D9111C0E60ED0086AF69 /* JournalViewController.swift */; };
+		9112D9141C0E614A0086AF69 /* ThoughtsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9112D9131C0E614A0086AF69 /* ThoughtsViewController.swift */; };
+		9112D9161C0E61510086AF69 /* EnterThoughtsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9112D9151C0E61510086AF69 /* EnterThoughtsViewController.swift */; };
+		9112D9181C0E615B0086AF69 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9112D9171C0E615B0086AF69 /* LoginViewController.swift */; };
+		9112D91A1C0E61610086AF69 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9112D9191C0E61610086AF69 /* SettingsViewController.swift */; };
+		9112D91C1C0E61690086AF69 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9112D91B1C0E61690086AF69 /* SignUpViewController.swift */; };
+		9112D91F1C0E618B0086AF69 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9112D91E1C0E618B0086AF69 /* User.swift */; };
+		9112D9211C0E61990086AF69 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9112D9201C0E61990086AF69 /* UserController.swift */; };
+		9112D9231C0E61AA0086AF69 /* Journal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9112D9221C0E61AA0086AF69 /* Journal.swift */; };
+		9112D9251C0E61B50086AF69 /* JournalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9112D9241C0E61B50086AF69 /* JournalController.swift */; };
+		9112D9271C0E61C20086AF69 /* Thoughts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9112D9261C0E61C20086AF69 /* Thoughts.swift */; };
+		9112D9291C0E61DD0086AF69 /* ThoughtsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9112D9281C0E61DD0086AF69 /* ThoughtsController.swift */; };
+		9112D92B1C0E61EA0086AF69 /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9112D92A1C0E61EA0086AF69 /* FirebaseController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9112D8FC1C0E608F0086AF69 /* NewQuickThoughts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewQuickThoughts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9112D8FF1C0E608F0086AF69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9112D9011C0E608F0086AF69 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9112D9041C0E608F0086AF69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9112D9061C0E608F0086AF69 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9112D9091C0E608F0086AF69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9112D90B1C0E608F0086AF69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9112D9111C0E60ED0086AF69 /* JournalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalViewController.swift; sourceTree = "<group>"; };
+		9112D9131C0E614A0086AF69 /* ThoughtsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThoughtsViewController.swift; sourceTree = "<group>"; };
+		9112D9151C0E61510086AF69 /* EnterThoughtsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterThoughtsViewController.swift; sourceTree = "<group>"; };
+		9112D9171C0E615B0086AF69 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		9112D9191C0E61610086AF69 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		9112D91B1C0E61690086AF69 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		9112D91E1C0E618B0086AF69 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		9112D9201C0E61990086AF69 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		9112D9221C0E61AA0086AF69 /* Journal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Journal.swift; sourceTree = "<group>"; };
+		9112D9241C0E61B50086AF69 /* JournalController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalController.swift; sourceTree = "<group>"; };
+		9112D9261C0E61C20086AF69 /* Thoughts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Thoughts.swift; sourceTree = "<group>"; };
+		9112D9281C0E61DD0086AF69 /* ThoughtsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThoughtsController.swift; sourceTree = "<group>"; };
+		9112D92A1C0E61EA0086AF69 /* FirebaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +78,50 @@
 		9112D8FE1C0E608F0086AF69 /* NewQuickThoughts */ = {
 			isa = PBXGroup;
 			children = (
-				9112D8FF1C0E608F0086AF69 /* AppDelegate.swift */,
-				9112D9011C0E608F0086AF69 /* ViewController.swift */,
+				9112D91E1C0E618B0086AF69 /* User.swift */,
+				9112D9201C0E61990086AF69 /* UserController.swift */,
+				9112D92A1C0E61EA0086AF69 /* FirebaseController.swift */,
+				9112D9221C0E61AA0086AF69 /* Journal.swift */,
+				9112D9241C0E61B50086AF69 /* JournalController.swift */,
+				9112D9261C0E61C20086AF69 /* Thoughts.swift */,
+				9112D9281C0E61DD0086AF69 /* ThoughtsController.swift */,
+				9112D91D1C0E61700086AF69 /* ViewControllers */,
+				9112D92C1C0E61F40086AF69 /* Storyboard */,
+				9112D92D1C0E62210086AF69 /* Extras */,
+			);
+			path = NewQuickThoughts;
+			sourceTree = "<group>";
+		};
+		9112D91D1C0E61700086AF69 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9112D9111C0E60ED0086AF69 /* JournalViewController.swift */,
+				9112D9131C0E614A0086AF69 /* ThoughtsViewController.swift */,
+				9112D9151C0E61510086AF69 /* EnterThoughtsViewController.swift */,
+				9112D9171C0E615B0086AF69 /* LoginViewController.swift */,
+				9112D9191C0E61610086AF69 /* SettingsViewController.swift */,
+				9112D91B1C0E61690086AF69 /* SignUpViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		9112D92C1C0E61F40086AF69 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
 				9112D9031C0E608F0086AF69 /* Main.storyboard */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		9112D92D1C0E62210086AF69 /* Extras */ = {
+			isa = PBXGroup;
+			children = (
+				9112D8FF1C0E608F0086AF69 /* AppDelegate.swift */,
 				9112D9061C0E608F0086AF69 /* Assets.xcassets */,
 				9112D9081C0E608F0086AF69 /* LaunchScreen.storyboard */,
 				9112D90B1C0E608F0086AF69 /* Info.plist */,
 			);
-			path = NewQuickThoughts;
+			name = Extras;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +195,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9112D9021C0E608F0086AF69 /* ViewController.swift in Sources */,
+				9112D9211C0E61990086AF69 /* UserController.swift in Sources */,
+				9112D9231C0E61AA0086AF69 /* Journal.swift in Sources */,
+				9112D9181C0E615B0086AF69 /* LoginViewController.swift in Sources */,
+				9112D9251C0E61B50086AF69 /* JournalController.swift in Sources */,
+				9112D9141C0E614A0086AF69 /* ThoughtsViewController.swift in Sources */,
+				9112D91C1C0E61690086AF69 /* SignUpViewController.swift in Sources */,
+				9112D9291C0E61DD0086AF69 /* ThoughtsController.swift in Sources */,
+				9112D91A1C0E61610086AF69 /* SettingsViewController.swift in Sources */,
+				9112D92B1C0E61EA0086AF69 /* FirebaseController.swift in Sources */,
+				9112D91F1C0E618B0086AF69 /* User.swift in Sources */,
+				9112D9161C0E61510086AF69 /* EnterThoughtsViewController.swift in Sources */,
+				9112D9121C0E60ED0086AF69 /* JournalViewController.swift in Sources */,
 				9112D9001C0E608F0086AF69 /* AppDelegate.swift in Sources */,
+				9112D9271C0E61C20086AF69 /* Thoughts.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

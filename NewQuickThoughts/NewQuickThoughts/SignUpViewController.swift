@@ -10,10 +10,10 @@ import UIKit
 
 class SignUpViewController: UIViewController {
     
-    @IBOutlet weak var createUserName: UITextField!
-    @IBOutlet weak var passwordStepOne: UITextField!
-    @IBOutlet weak var passwordStepTwo: UITextField!
-    @IBOutlet weak var validEmailAddress: UITextField!
+    @IBOutlet weak var username: UITextField!
+    @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var confirmPassword: UITextField!
+    @IBOutlet weak var emailAddress: UITextField!
     
     @IBOutlet weak var submitButton: UIButton!
     
@@ -35,30 +35,30 @@ class SignUpViewController: UIViewController {
         border.borderColor = UIColor.darkGrayColor().CGColor
         
         // createUserName textField
-        border.frame = CGRect(x: 0, y: createUserName.frame.size.height - width, width: createUserName.frame.size.width, height: createUserName.frame.size.height)
+        border.frame = CGRect(x: 0, y: username.frame.size.height - width, width: username.frame.size.width, height: username.frame.size.height)
         
         // passwordStepOne textfield
-        border.frame = CGRect(x: 0, y: passwordStepOne.frame.size.height - width, width: passwordStepOne.frame.size.width, height: passwordStepOne.frame.size.height)
+        border.frame = CGRect(x: 0, y: password.frame.size.height - width, width: password.frame.size.width, height: password.frame.size.height)
         
         // passwordStepTwo textfield
-        border.frame = CGRect(x: 0, y: passwordStepTwo.frame.size.height - width, width: passwordStepTwo.frame.size.width, height: passwordStepTwo.frame.size.height)
+        border.frame = CGRect(x: 0, y: confirmPassword.frame.size.height - width, width: confirmPassword.frame.size.width, height: confirmPassword.frame.size.height)
         
         // validEmailAddress textfield
-        border.frame = CGRect(x: 0, y: validEmailAddress.frame.size.height - width, width: validEmailAddress.frame.size.width, height: validEmailAddress.frame.size.height)
+        border.frame = CGRect(x: 0, y: emailAddress.frame.size.height - width, width: emailAddress.frame.size.width, height: emailAddress.frame.size.height)
         
         border.borderWidth = width
         
-        createUserName.layer.addSublayer(border)
-        createUserName.layer.masksToBounds = true
+        username.layer.addSublayer(border)
+        username.layer.masksToBounds = true
         
-        passwordStepOne.layer.addSublayer(border)
-        passwordStepOne.layer.masksToBounds = true
+        password.layer.addSublayer(border)
+        password.layer.masksToBounds = true
         
-        passwordStepTwo.layer.addSublayer(border)
-        passwordStepTwo.layer.masksToBounds = true
+        confirmPassword.layer.addSublayer(border)
+        confirmPassword.layer.masksToBounds = true
         
-        validEmailAddress.layer.addSublayer(border)
-        validEmailAddress.layer.masksToBounds = true
+        emailAddress.layer.addSublayer(border)
+        emailAddress.layer.masksToBounds = true
     }
     
 }

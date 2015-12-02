@@ -80,12 +80,7 @@
 		9112D8F31C0E608F0086AF69 = {
 			isa = PBXGroup;
 			children = (
-				9112D93C1C0E68380086AF69 /* SystemConfiguration.framework */,
-				9112D93A1C0E682A0086AF69 /* CFNetwork.framework */,
-				9112D9381C0E68220086AF69 /* libc++.tbd */,
-				9112D9361C0E68180086AF69 /* libicucore.tbd */,
-				9112D9341C0E680E0086AF69 /* Security.framework */,
-				9112D9321C0E68030086AF69 /* Firebase.framework */,
+				918704991C0E6D1B006CBB6F /* Frameworks */,
 				9112D8FE1C0E608F0086AF69 /* NewQuickThoughts */,
 				9112D8FD1C0E608F0086AF69 /* Products */,
 			);
@@ -146,6 +141,19 @@
 				9112D90B1C0E608F0086AF69 /* Info.plist */,
 			);
 			name = Extras;
+			sourceTree = "<group>";
+		};
+		918704991C0E6D1B006CBB6F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9112D93C1C0E68380086AF69 /* SystemConfiguration.framework */,
+				9112D93A1C0E682A0086AF69 /* CFNetwork.framework */,
+				9112D9381C0E68220086AF69 /* libc++.tbd */,
+				9112D9361C0E68180086AF69 /* libicucore.tbd */,
+				9112D9341C0E680E0086AF69 /* Security.framework */,
+				9112D9321C0E68030086AF69 /* Firebase.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -388,6 +396,7 @@
 				9112D9101C0E608F0086AF69 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

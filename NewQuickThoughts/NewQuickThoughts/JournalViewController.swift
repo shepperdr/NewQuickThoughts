@@ -63,13 +63,30 @@ class JournalViewController: UIViewController, UITableViewDataSource, UITableVie
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
        
         
-    let deleteAction = UITableViewRowAction(style: .Destructive, title: "Delete") { (action, indexPath)-> Void in
-    tableView.editing = false
-        let journal = JournalController.sharedInstance.journals[indexPath.row]
-        
-        JournalController.sharedInstance.removeJournal(journal)
-    print("Delete Pressed")
-    
+        let deleteAction = UITableViewRowAction(style: .Destructive, title: "Delete") { (action, indexPath)-> Void in
+            tableView.editing = false
+            
+            let journal = JournalController.sharedInstance.journals[indexPath.row]
+            
+            
+            let alertController = UIAlertController(title: "Are you sure you want to delete this Journal?", message: "All entries in this Journal will be erased as well! ", preferredStyle: .Alert)
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
+            }
+            
+            alertController.addAction(cancelAction)
+            
+            let OKAction = UIAlertAction(title: "OK", style: .Destructive) { (action) in
+                
+                JournalController.sharedInstance.removeJournal(journal)
+            }
+            alertController.addAction(OKAction)
+            
+            
+            self.presentViewController(alertController, animated: true) {
+                
+            }
+            
         }
         
     deleteAction.backgroundColor = UIColor.redColor()
@@ -80,7 +97,6 @@ class JournalViewController: UIViewController, UITableViewDataSource, UITableVie
 //            let journal = JournalController.sharedInstance.journals[indexPath.row]
             
         }
-        
         
         editAction.backgroundColor = .orangeColor()
     

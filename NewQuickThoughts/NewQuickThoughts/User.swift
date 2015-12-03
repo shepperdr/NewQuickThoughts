@@ -13,13 +13,14 @@ class User: Equatable {
     
     var email: String
     var password: String
+    var username: String
     
     private let userKey = "user"
     
-    init(email: String, password: String) {
+    init(email: String, password: String, username: String) {
         self.email = email
         self.password = password
-        
+        self.username = username
     }
 }
 

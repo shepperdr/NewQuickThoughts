@@ -17,6 +17,20 @@ class FirebaseController {
     static let userBase = base.childByAppendingPath("user")
     static let journalBase = base.childByAppendingPath("journal")
     
+    static func dataAtEndpoint(endpoint: String, completion: (data: AnyObject?) -> Void) {
+        
+        let firebaseEndpoint = FirebaseController.base.childByAppendingPath(endpoint)
+        
+        firebaseEndpoint.observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+            if snapshot.value is NSNull {
+                completion(data: nil)
+            } else {
+                completion(data: snapshot.value)
+            }
+        })
+    }
+
+    
     func fetchAllJournals(completion: () -> () ) {
         FirebaseController.journalBase.observeEventType(.Value, withBlock: { (snapshot) -> Void in
             

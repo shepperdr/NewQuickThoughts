@@ -60,7 +60,23 @@ class ThoughtsViewController: UIViewController, UITableViewDataSource {
             
             let thought = ThoughtsController.sharedInstance.thoughts[indexPath.row]
             
-            ThoughtsController.sharedInstance.removeThoughts(thought)
+            let alertController = UIAlertController(title: "Are you sure?", message: "Clicking OK will remove this thought forever!", preferredStyle: .Alert)
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
+            }
+            
+            alertController.addAction(cancelAction)
+            
+            let OKAction = UIAlertAction(title: "OK", style: .Destructive) { (action) in
+                
+                ThoughtsController.sharedInstance.removeThoughts(thought)
+            }
+            alertController.addAction(OKAction)
+            
+            
+            self.presentViewController(alertController, animated: true) {
+            }
+
             
             tableView.reloadData()
             

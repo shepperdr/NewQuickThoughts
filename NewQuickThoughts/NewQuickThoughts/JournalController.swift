@@ -37,8 +37,10 @@ class JournalController {
         if let index = self.journals.indexOf(journal) {
             self.journals.removeAtIndex(index)
         }
-        
-        
+    }
+    
+    func updateJournalTitle(journal: Journal) {
+      //i need an update function to work with the "Edit" in the JournalVC
     }
     
     func loadJournal() {

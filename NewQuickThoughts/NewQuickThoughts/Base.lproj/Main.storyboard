@@ -102,6 +102,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="6jI-9V-R7N" id="Exz-UD-Tyf"/>
+                                    <outlet property="delegate" destination="6jI-9V-R7N" id="Skf-Gw-yCq"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <animations/>
@@ -273,8 +277,53 @@
                     <view key="view" contentMode="scaleToFill" id="jtu-M7-DSf">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ie5-uP-JTn">
+                                <rect key="frame" x="226" y="335" width="148" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Sign Up"/>
+                                <connections>
+                                    <segue destination="UnJ-kA-Ur7" kind="show" id="nQP-Qy-dzr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w3B-Yg-kGu">
+                                <rect key="frame" x="226" y="277" width="148" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="148" id="fln-VQ-vKu"/>
+                                </constraints>
+                                <state key="normal" title="Login"/>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AcW-CT-QPM">
+                                <rect key="frame" x="210" y="139" width="180" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="r2E-Kr-mf0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hmt-Z5-DY1">
+                                <rect key="frame" x="210" y="187" width="180" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="AcW-CT-QPM" firstAttribute="leading" secondItem="Hmt-Z5-DY1" secondAttribute="leading" id="2eD-3U-YWV"/>
+                            <constraint firstItem="Hmt-Z5-DY1" firstAttribute="trailing" secondItem="AcW-CT-QPM" secondAttribute="trailing" id="Ctq-6Y-7ci"/>
+                            <constraint firstItem="w3B-Yg-kGu" firstAttribute="trailing" secondItem="ie5-uP-JTn" secondAttribute="trailing" id="Dc8-G2-0LV"/>
+                            <constraint firstItem="AcW-CT-QPM" firstAttribute="top" secondItem="hu3-Jo-Zmz" secondAttribute="bottom" constant="75" id="WFi-He-Rkf"/>
+                            <constraint firstItem="ie5-uP-JTn" firstAttribute="top" secondItem="w3B-Yg-kGu" secondAttribute="bottom" constant="28" id="cf0-9r-rOR"/>
+                            <constraint firstItem="Hmt-Z5-DY1" firstAttribute="top" secondItem="AcW-CT-QPM" secondAttribute="bottom" constant="18" id="cyZ-PX-U3q"/>
+                            <constraint firstItem="w3B-Yg-kGu" firstAttribute="centerX" secondItem="jtu-M7-DSf" secondAttribute="centerX" id="ec0-f7-kch"/>
+                            <constraint firstItem="ie5-uP-JTn" firstAttribute="leading" secondItem="w3B-Yg-kGu" secondAttribute="leading" id="gWB-UP-QA7"/>
+                            <constraint firstItem="w3B-Yg-kGu" firstAttribute="top" secondItem="Hmt-Z5-DY1" secondAttribute="bottom" constant="60" id="i3w-NJ-rfo"/>
+                            <constraint firstItem="Hmt-Z5-DY1" firstAttribute="centerX" secondItem="w3B-Yg-kGu" secondAttribute="centerX" id="vix-VC-Jpv"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kuA-bp-A5L" userLabel="First Responder" sceneMemberID="firstResponder"/>

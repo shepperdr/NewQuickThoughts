@@ -51,7 +51,6 @@ class JournalViewController: UIViewController, UITableViewDataSource, UITableVie
         
         cell.textLabel?.text = journal.title
         
-        
         return cell
         
     }
@@ -61,41 +60,66 @@ class JournalViewController: UIViewController, UITableViewDataSource, UITableVie
         return JournalController.sharedInstance.journals.count
     }
     
-    //    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-    //        mmm
-    //    }
+    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+       
+        
+    let deleteAction = UITableViewRowAction(style: .Destructive, title: "Delete") { (action, indexPath)-> Void in
+    tableView.editing = false
+        let journal = JournalController.sharedInstance.journals[indexPath.row]
+        
+        JournalController.sharedInstance.removeJournal(journal)
+    print("Delete Pressed")
     
-    //    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-    //
-    //        if editingStyle == .Delete {
-    //
-    //            let journal = JournalController.sharedInstance.journals[indexPath.row]
-    //
-    //            let alert = UIAlertController(title: "Change Journal Title", message: "What do you want the new title to be?", preferredStyle: UIAlertControllerStyle.Alert)
-    //
-    //            alert.addTextFieldWithConfigurationHandler( { (textField: UITextField) -> Void in
-    //                textField.placeholder = "Journal Title"
-    //            })
-    //
-    //            let action0 = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
-    //
-    //            alert.addAction(action0)
-    //            let textField = alert.textFields![0]
-    //
-    //            let action1 = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (_) -> Void in
-    //                // this works with the exact ID in it.
-    //
-    //                FirebaseController.journalBase.childByAppendingPath("-K3nR1tMYkVpO3NwfCMj").updateChildValues(["title": textField.text!])
-    //                //                self.tableView.reloadData()
-    //            }
-    //
-    //
-    //            JournalController.sharedInstance.removeJournal(journal)
-    //
-    //            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
-    //
-    //        }
-    //    }
+        }
+        
+    deleteAction.backgroundColor = UIColor.redColor()
+        
+        let editAction = UITableViewRowAction(style: .Normal, title: "Edit") { (action, indexPath) -> Void in
+            tableView.editing = false
+            
+//            let journal = JournalController.sharedInstance.journals[indexPath.row]
+            
+        }
+        
+        
+        editAction.backgroundColor = .orangeColor()
+    
+    return [deleteAction, editAction]
+        
+    }
+    
+   
+        func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    
+//            if editingStyle == .Delete {
+//    
+//                let journal = JournalController.sharedInstance.journals[indexPath.row]
+//    
+//                let alert = UIAlertController(title: "Change Journal Title", message: "What do you want the new title to be?", preferredStyle: UIAlertControllerStyle.Alert)
+//    
+//                alert.addTextFieldWithConfigurationHandler( { (textField: UITextField) -> Void in
+//                    textField.placeholder = "Journal Title"
+//                })
+//    
+//                let action0 = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+//    
+//                alert.addAction(action0)
+//                let textField = alert.textFields![0]
+//    
+//                let action1 = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (_) -> Void in
+//                    // this works with the exact ID in it.
+//    
+//                    FirebaseController.journalBase.childByAppendingPath("-K3nR1tMYkVpO3NwfCMj").updateChildValues(["title": textField.text!])
+//                    //                self.tableView.reloadData()
+//                }
+//    
+//    
+//                JournalController.sharedInstance.removeJournal(journal)
+//    
+//                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+//    
+//            }
+        }
     
     @IBAction func addJournal(sender: AnyObject) {
         let alert = UIAlertController(title: "New Journal", message: "Add a title to your new Journal.", preferredStyle: UIAlertControllerStyle.Alert)

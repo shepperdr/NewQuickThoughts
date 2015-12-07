@@ -53,6 +53,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gOP-f8-zO4">
+                        <barButtonItem key="backBarButtonItem" title=" " id="C1A-rE-Wr6"/>
                         <barButtonItem key="leftBarButtonItem" image="settings" id="ynT-4y-hcy">
                             <connections>
                                 <segue destination="Fmy-Ol-psO" kind="show" identifier="toSettings" id="kSh-v7-S14"/>
@@ -72,7 +73,7 @@
             </objects>
             <point key="canvasLocation" x="1084" y="800"/>
         </scene>
-        <!--Title-->
+        <!--Thoughts View Controller-->
         <scene sceneID="5MG-Ru-EsM">
             <objects>
                 <viewController id="6jI-9V-R7N" customClass="ThoughtsViewController" customModule="NewQuickThoughts" customModuleProvider="target" sceneMemberID="viewController">
@@ -118,7 +119,8 @@
                             <constraint firstAttribute="trailing" secondItem="trp-Fe-yfQ" secondAttribute="trailing" id="oUQ-8x-eU4"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="YuM-je-Wd2">
+                    <navigationItem key="navigationItem" id="YuM-je-Wd2">
+                        <barButtonItem key="backBarButtonItem" title=" " id="avd-Xd-MZA"/>
                         <barButtonItem key="rightBarButtonItem" image="newEntry" id="OYn-Nn-dhJ">
                             <connections>
                                 <segue destination="z66-AR-b8i" kind="show" identifier="newThought" id="hZW-gp-Zq3"/>
@@ -168,7 +170,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="77" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKf-u5-plR">
-                                <rect key="frame" x="20" y="128" width="41" height="26"/>
+                                <rect key="frame" x="20" y="126" width="41" height="29"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="41" id="SIv-ef-Chs"/>
@@ -201,17 +203,17 @@
                         <constraints>
                             <constraint firstItem="eoA-gg-omw" firstAttribute="centerX" secondItem="Nys-n0-ynD" secondAttribute="centerX" id="0cs-5f-hrX"/>
                             <constraint firstItem="u57-K3-JXy" firstAttribute="top" secondItem="Nys-n0-ynD" secondAttribute="bottom" constant="298" id="1eI-16-zsy"/>
-                            <constraint firstItem="Nys-n0-ynD" firstAttribute="top" secondItem="gKf-u5-plR" secondAttribute="bottom" constant="16" id="2AD-kZ-FMy"/>
+                            <constraint firstItem="Nys-n0-ynD" firstAttribute="top" secondItem="gKf-u5-plR" secondAttribute="bottom" constant="15" id="2AD-kZ-FMy"/>
                             <constraint firstItem="bJM-fK-REk" firstAttribute="trailing" secondItem="i34-9m-bak" secondAttribute="trailingMargin" id="8Ss-3o-mLR"/>
                             <constraint firstItem="Nys-n0-ynD" firstAttribute="leading" secondItem="i34-9m-bak" secondAttribute="leadingMargin" constant="-1" id="MkO-Bo-5lb"/>
                             <constraint firstItem="Nys-n0-ynD" firstAttribute="centerY" secondItem="eoA-gg-omw" secondAttribute="centerY" id="Rh7-6r-O68"/>
-                            <constraint firstItem="pZg-01-PtO" firstAttribute="top" secondItem="gKf-u5-plR" secondAttribute="top" id="Vau-0b-LMP"/>
+                            <constraint firstItem="pZg-01-PtO" firstAttribute="top" secondItem="gKf-u5-plR" secondAttribute="top" constant="2" id="Vau-0b-LMP"/>
                             <constraint firstItem="pZg-01-PtO" firstAttribute="leading" secondItem="gKf-u5-plR" secondAttribute="trailing" constant="2" id="Wiq-TG-z5M"/>
                             <constraint firstItem="eoA-gg-omw" firstAttribute="top" secondItem="51g-Kj-6Zn" secondAttribute="bottom" constant="15" id="Wpn-3i-257"/>
                             <constraint firstItem="Nys-n0-ynD" firstAttribute="top" secondItem="51g-Kj-6Zn" secondAttribute="bottom" constant="14" id="Ysd-ue-ieu"/>
                             <constraint firstItem="pZg-01-PtO" firstAttribute="leading" secondItem="51g-Kj-6Zn" secondAttribute="leading" id="Zrz-pi-I86"/>
                             <constraint firstItem="gKf-u5-plR" firstAttribute="leading" secondItem="bJM-fK-REk" secondAttribute="leading" id="cps-D0-pZF"/>
-                            <constraint firstItem="gKf-u5-plR" firstAttribute="top" secondItem="bJM-fK-REk" secondAttribute="bottom" constant="10" id="dep-LE-CbI"/>
+                            <constraint firstItem="gKf-u5-plR" firstAttribute="top" secondItem="bJM-fK-REk" secondAttribute="bottom" constant="8" id="dep-LE-CbI"/>
                             <constraint firstItem="Nys-n0-ynD" firstAttribute="top" secondItem="pZg-01-PtO" secondAttribute="bottom" constant="27" id="f5c-3p-fRY"/>
                             <constraint firstItem="gKf-u5-plR" firstAttribute="leading" secondItem="i34-9m-bak" secondAttribute="leadingMargin" id="hOw-ex-Anp"/>
                             <constraint firstItem="bJM-fK-REk" firstAttribute="trailing" secondItem="eoA-gg-omw" secondAttribute="trailing" id="mMv-Bf-WD1"/>
@@ -229,7 +231,10 @@
                     </navigationItem>
                     <connections>
                         <outlet property="bodyTextView" destination="eoA-gg-omw" id="rbd-vc-g6h"/>
+                        <outlet property="dateLabel" destination="gKf-u5-plR" id="3wL-57-knW"/>
+                        <outlet property="dayOfWeekLabel" destination="pZg-01-PtO" id="wXw-AL-aQ1"/>
                         <outlet property="enterThoughtsView" destination="i34-9m-bak" id="dA9-3H-nlb"/>
+                        <outlet property="monthLabel" destination="pZg-01-PtO" id="haM-YD-6It"/>
                         <outlet property="titleTextField" destination="bJM-fK-REk" id="DwA-Ew-9Kd"/>
                     </connections>
                 </viewController>
@@ -282,6 +287,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="DBp-oG-bwZ">
+                        <barButtonItem key="backBarButtonItem" title=" " id="e2n-pQ-bFb"/>
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="ov7-Pw-f9P">
                             <connections>
                                 <action selector="cancel:" destination="Fmy-Ol-psO" id="CHi-4c-LNc"/>

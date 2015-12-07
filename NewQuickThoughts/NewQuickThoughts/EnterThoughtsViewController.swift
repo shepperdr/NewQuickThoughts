@@ -26,7 +26,7 @@ class EnterThoughtsViewController: UIViewController, UITextFieldDelegate, UIText
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //        setDateMonthDayOfWeek()
+        setDateMonthDayOfWeek()
         
         titleTextField.delegate = self
         enterThoughtsView.addGestureRecognizer(tapRec)
@@ -37,28 +37,28 @@ class EnterThoughtsViewController: UIViewController, UITextFieldDelegate, UIText
         UITextView.appearance().tintColor = UIColor.darkGrayColor()
         
     }
-    //Uncomment to get date working again.
-    //    func setDateMonthDayOfWeek() {
-    //
-    //        let dateFormatter = NSDateFormatter()
-    //        dateFormatter.setLocalizedDateFormatFromTemplate(":dd:")
-    //        let dateString = dateFormatter.stringFromDate(NSDate())
-    //        self.dateLabel.text = ("\(dateString)")
-    //        print("\(dateString)")
-    //
-    //        let monthFormatter = NSDateFormatter()
-    //        monthFormatter.setLocalizedDateFormatFromTemplate("MMMM")
-    //        let monthString = monthFormatter.stringFromDate(NSDate())
-    //        self.monthLabel.text = ("\(monthString)")
-    //        print("\(monthString)")
-    //
-    //        let dayOfTheWeekFormatter = NSDateFormatter()
-    //        dayOfTheWeekFormatter.dateFormat = "EEEE"
-    //        let dayOfTheWeek = dayOfTheWeekFormatter.stringFromDate(NSDate())
-    //        self.dayOfWeekLabel.text = ("\(dayOfTheWeek)")
-    //        print("\(dayOfTheWeek)")
-    //
-    //    }
+    //    Uncomment to get date working again.
+        func setDateMonthDayOfWeek() {
+    
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.setLocalizedDateFormatFromTemplate(":dd:")
+            let dateString = dateFormatter.stringFromDate(NSDate())
+            self.dateLabel.text = ("\(dateString)")
+            print("\(dateString)")
+    
+            let monthFormatter = NSDateFormatter()
+            monthFormatter.setLocalizedDateFormatFromTemplate("MMMM")
+            let monthString = monthFormatter.stringFromDate(NSDate())
+            self.monthLabel.text = ("\(monthString)")
+            print("\(monthString)")
+    
+            let dayOfTheWeekFormatter = NSDateFormatter()
+            dayOfTheWeekFormatter.dateFormat = "EEEE"
+            let dayOfTheWeek = dayOfTheWeekFormatter.stringFromDate(NSDate())
+            self.dayOfWeekLabel.text = ("\(dayOfTheWeek)")
+            print("\(dayOfTheWeek)")
+    
+        }
     
     func tappedView() {
         bodyTextView.resignFirstResponder()

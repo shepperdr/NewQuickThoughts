@@ -125,6 +125,8 @@ class JournalViewController: UIViewController, UITableViewDataSource, UITableVie
 //                let action1 = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (_) -> Void in
 //                    // this works with the exact ID in it.
 //    
+            //TODO: add this ti the "Edit" button to change the title of the journal
+            
 //                    FirebaseController.journalBase.childByAppendingPath("-K3nR1tMYkVpO3NwfCMj").updateChildValues(["title": textField.text!])
 //                    //                self.tableView.reloadData()
 //                }

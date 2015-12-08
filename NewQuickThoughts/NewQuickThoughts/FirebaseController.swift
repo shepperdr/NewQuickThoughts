@@ -16,6 +16,7 @@ class FirebaseController {
     static let base = Firebase(url: "https://quickthoughts.firebaseio.com/")
     static let userBase = base.childByAppendingPath("user")
     static let journalBase = base.childByAppendingPath("journal")
+    static let journalNameRef = Firebase(url: "https://quickthoughts.firebaseio.com/journal/")
     
     static func dataAtEndpoint(endpoint: String, completion: (data: AnyObject?) -> Void) {
         
@@ -29,7 +30,6 @@ class FirebaseController {
             }
         })
     }
-
     
     func fetchAllJournals(completion: () -> () ) {
         FirebaseController.journalBase.observeEventType(.Value, withBlock: { (snapshot) -> Void in

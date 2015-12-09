@@ -41,6 +41,8 @@ class JournalController {
     
     func updateJournalTitle(journal: Journal) {
       //i need an update function to work with the "Edit" in the JournalVC
+            journal.ref?.setValue("title")
+//        let journalName = FirebaseController.journalNameRef
     }
     
     func loadJournal() {

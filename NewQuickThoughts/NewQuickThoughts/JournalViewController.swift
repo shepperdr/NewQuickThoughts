@@ -9,6 +9,7 @@
 import UIKit
 
 class JournalViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate {
+    var journal: Journal?
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -102,17 +103,21 @@ class JournalViewController: UIViewController, UITableViewDataSource, UITableVie
                 textField.placeholder = "Journal Title"
             })
             
-            let action0 = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
             
-            alert.addAction(action0)
+            alert.addAction(cancelAction)
             let textField = alert.textFields![0]
             
-            let action1 = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (_) -> Void in
+            let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (_) -> Void in
                 // this works with the exact ID in it.
                 
-                FirebaseController.journalNameRef.childByAppendingPath("title").setValue(["title": textField.text!])
-        }
-          alert.addAction(action1)
+                FirebaseController.journalBase.childByAppendingPath("-K54F8lOFTtgNrrO65WL").updateChildValues(["title": textField.text!])
+                
+               print(textField.text!)
+
+            }
+            
+          alert.addAction(OKAction)
             self.presentViewController(alert, animated: true, completion: nil)
         }
         
@@ -125,38 +130,8 @@ class JournalViewController: UIViewController, UITableViewDataSource, UITableVie
    
         func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
     
-//            if editingStyle == .Delete {
-//    
-//                let journal = JournalController.sharedInstance.journals[indexPath.row]
-//    
-//                let alert = UIAlertController(title: "Change Journal Title", message: "What do you want the new title to be?", preferredStyle: UIAlertControllerStyle.Alert)
-//    
-//                alert.addTextFieldWithConfigurationHandler( { (textField: UITextField) -> Void in
-//                    textField.placeholder = "Journal Title"
-//                })
-//    
-//                let action0 = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
-//    
-//                alert.addAction(action0)
-//                let textField = alert.textFields![0]
-//    
-//                let action1 = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (_) -> Void in
-//                    // this works with the exact ID in it.
-//    
-            //TODO: add this ti the "Edit" button to change the title of the journal
-            
-//                    FirebaseController.journalBase.childByAppendingPath("-K3nR1tMYkVpO3NwfCMj").updateChildValues(["title": textField.text!]) 
-//            nate suggested this
-//               FirebaseController.journalBase.childByAppendingPath("-K3nR1tMYkVpO3NwfCMj").childby append(). setvalue
-//                    //                self.tableView.reloadData()
-//                }
-//    
-//
-//                JournalController.sharedInstance.removeJournal(journal)
-//    
-//                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
-//    
-//            }
+//    FirebaseController.journalBase.childByAppendingPath("-K3nR1tMYkVpO3NwfCMj").updateChildValues(["title": textField.text!])
+
         }
     
     @IBAction func addJournal(sender: AnyObject) {

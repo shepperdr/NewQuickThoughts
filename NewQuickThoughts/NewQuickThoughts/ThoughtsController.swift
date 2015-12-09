@@ -77,14 +77,4 @@ class ThoughtsController {
         
     }
     
-    
-    // i need to get the correct function here to edit and save our thought that already exists....
-    //    func editExistingThoughtInJournal(journal: Journal, thought: Thoughts, completion:(success:Bool) -> Void) {
-    //
-    //        let editedThought =
-    //    }
-    
-    
-    
-    
 }

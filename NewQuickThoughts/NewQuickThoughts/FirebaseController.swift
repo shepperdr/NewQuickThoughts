@@ -18,6 +18,7 @@ class FirebaseController {
     static let journalBase = base.childByAppendingPath("journal")
     static let journalNameRef = Firebase(url: "https://quickthoughts.firebaseio.com/journal/")
     
+    
     static func dataAtEndpoint(endpoint: String, completion: (data: AnyObject?) -> Void) {
         
         let firebaseEndpoint = FirebaseController.base.childByAppendingPath(endpoint)

@@ -13,16 +13,32 @@ class User: Equatable {
     
     var email: String
     var password: String
-    var username: String
+    var ref: String?
     
     private let userKey = "user"
     
-    init(email: String, password: String, username: String) {
+    init(email: String, password: String) {
         self.email = email
         self.password = password
-        self.username = username
     }
+    
+    init?(dictionary: Dictionary<String, AnyObject>) {
+        guard let email = dictionary["email"] as? String, password = dictionary["password"] as? String else{
+            
+            self.email = ""
+            self.password = ""
+            
+            return nil
+        }
+        
+        self.email = email
+        self.password = password
+        
+    }
+
 }
+
+
 
 func == (lhs: User, rhs: User) -> Bool {
     

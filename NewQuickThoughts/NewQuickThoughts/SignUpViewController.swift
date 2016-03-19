@@ -10,10 +10,9 @@ import UIKit
 
 class SignUpViewController: UIViewController {
     
-    @IBOutlet weak var username: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var confirmPassword: UITextField!
-    @IBOutlet weak var emailAddress: UITextField!
     
     @IBOutlet weak var submitButton: UIButton!
     
@@ -34,8 +33,8 @@ class SignUpViewController: UIViewController {
         let width = CGFloat (0.5)
         border.borderColor = UIColor.darkGrayColor().CGColor
         
-        // createUserName textField
-        border.frame = CGRect(x: 0, y: username.frame.size.height - width, width: username.frame.size.width, height: username.frame.size.height)
+        // createemailTextField textField
+        border.frame = CGRect(x: 0, y: emailTextField.frame.size.height - width, width: emailTextField.frame.size.width, height: emailTextField.frame.size.height)
         
         // passwordStepOne textfield
         border.frame = CGRect(x: 0, y: password.frame.size.height - width, width: password.frame.size.width, height: password.frame.size.height)
@@ -43,13 +42,10 @@ class SignUpViewController: UIViewController {
         // passwordStepTwo textfield
         border.frame = CGRect(x: 0, y: confirmPassword.frame.size.height - width, width: confirmPassword.frame.size.width, height: confirmPassword.frame.size.height)
         
-        // validEmailAddress textfield
-        border.frame = CGRect(x: 0, y: emailAddress.frame.size.height - width, width: emailAddress.frame.size.width, height: emailAddress.frame.size.height)
-        
         border.borderWidth = width
         
-        username.layer.addSublayer(border)
-        username.layer.masksToBounds = true
+        emailTextField.layer.addSublayer(border)
+        emailTextField.layer.masksToBounds = true
         
         password.layer.addSublayer(border)
         password.layer.masksToBounds = true
@@ -57,8 +53,23 @@ class SignUpViewController: UIViewController {
         confirmPassword.layer.addSublayer(border)
         confirmPassword.layer.masksToBounds = true
         
-        emailAddress.layer.addSublayer(border)
-        emailAddress.layer.masksToBounds = true
     }
+    
+    @IBAction func submitButtonPressed(sender: AnyObject) {
+        if password.text == confirmPassword.text {
+            UserController.sharedInstance.createUser(emailTextField.text!, password: password.text!) { (user) -> Void in
+                if UserController.sharedInstance.currentUser == nil {
+                    print("error loading user, add an alert")
+                    return
+                }
+                self.performSegueWithIdentifier("segue", sender: self)
+            }
+        } else {
+            print("add alert to indicate passwordTextField and confirmPasswordTextField are not the same")
+        }
+        
+    }
+    
+    
     
 }

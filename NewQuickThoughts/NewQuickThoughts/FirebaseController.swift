@@ -14,10 +14,10 @@ class FirebaseController {
     static let sharedInstance = FirebaseController()
     
     static let base = Firebase(url: "https://quickthoughts.firebaseio.com/")
-    static let userBase = base.childByAppendingPath("user")
+    static let userBase = base.childByAppendingPath("users")
     static let journalBase = base.childByAppendingPath("journal")
     static let journalNameRef = Firebase(url: "https://quickthoughts.firebaseio.com/journal/")
-    
+    static let currentUserURL = Firebase(url: "https://quickthoughts.firebaseio.com/users/\(UserController.sharedInstance.currentUser!.ref!)")
     
     static func dataAtEndpoint(endpoint: String, completion: (data: AnyObject?) -> Void) {
         

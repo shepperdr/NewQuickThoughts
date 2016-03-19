@@ -10,8 +10,9 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    @IBOutlet weak var userNameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
     
     
     
@@ -27,21 +28,32 @@ class LoginViewController: UIViewController {
         border.borderColor = UIColor.darkGrayColor().CGColor
         
         // Username textField
-        border.frame = CGRect(x: 0, y: userNameTextField.frame.size.height - width, width: userNameTextField.frame.size.width, height: userNameTextField.frame.size.height)
+        border.frame = CGRect(x: 0, y: emailTextField.frame.size.height - width, width: emailTextField.frame.size.width, height: emailTextField.frame.size.height)
         
         // Password textfield
         border.frame = CGRect(x: 0, y: passwordTextField.frame.size.height - width, width: passwordTextField.frame.size.width, height: passwordTextField.frame.size.height)
         
         border.borderWidth = width
         
-        userNameTextField.layer.addSublayer(border)
-        userNameTextField.layer.masksToBounds = true
+        emailTextField.layer.addSublayer(border)
+        emailTextField.layer.masksToBounds = true
         
         passwordTextField.layer.addSublayer(border)
         passwordTextField.layer.masksToBounds = true
     }
     
-    
+    @IBAction func loginButtonPressed(sender: AnyObject) {
+        if !(passwordTextField.text == "" && emailTextField.text == "") {
+            UserController.sharedInstance.loginUser(emailTextField.text!, password: passwordTextField.text!, completion: { (user) -> Void in
+                if UserController.sharedInstance.currentUser == nil {
+                    print("error loading user, add an alert")
+                    return
+                }
+                self.performSegueWithIdentifier("segue", sender: self)
+            })
+        }
+    }
+   
     
     /*
     // MARK: - Navigation

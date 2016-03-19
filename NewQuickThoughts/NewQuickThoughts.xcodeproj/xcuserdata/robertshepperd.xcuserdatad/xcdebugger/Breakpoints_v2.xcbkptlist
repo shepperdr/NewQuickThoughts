@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NewQuickThoughts/JournalViewController.swift"
-            timestampString = "474499972.309243"
+            filePath = "NewQuickThoughts/JournalController.swift"
+            timestampString = "480121955.619563"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
-            landmarkName = "tableView(_:editActionsForRowAtIndexPath:)"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "updateJournalTitle(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

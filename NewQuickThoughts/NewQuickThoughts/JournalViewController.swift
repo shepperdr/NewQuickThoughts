@@ -92,38 +92,44 @@ class JournalViewController: UIViewController, UITableViewDataSource, UITableVie
         
     deleteAction.backgroundColor = UIColor.redColor()
         
-        let editAction = UITableViewRowAction(style: .Normal, title: "Edit") { (action, indexPath) -> Void in
-            tableView.editing = false
-            
-//            let journal = JournalController.sharedInstance.journals[indexPath.row]
-
-            let alert = UIAlertController(title: "Change Journal Title", message: "What do you want the new title to be?", preferredStyle: UIAlertControllerStyle.Alert)
-            
-            alert.addTextFieldWithConfigurationHandler( { (textField: UITextField) -> Void in
-                textField.placeholder = "Journal Title"
-            })
-            
-            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
-            
-            alert.addAction(cancelAction)
-            let textField = alert.textFields![0]
-            
-            let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (_) -> Void in
-                // this works with the exact ID in it.
-                
-                FirebaseController.journalBase.childByAppendingPath("-K54F8lOFTtgNrrO65WL").updateChildValues(["title": textField.text!])
-                
-               print(textField.text!)
-
-            }
-            
-          alert.addAction(OKAction)
-            self.presentViewController(alert, animated: true, completion: nil)
-        }
-        
-        editAction.backgroundColor = .orangeColor()
-    
-    return [deleteAction, editAction]
+//        let editAction = UITableViewRowAction(style: .Normal, title: "Edit") { (action, indexPath) -> Void in
+//            tableView.editing = false
+//            
+////            let journal = JournalController.sharedInstance.journals[indexPath.row]
+//
+//            let alert = UIAlertController(title: "Change Journal Title", message: "What do you want the new title to be?", preferredStyle: UIAlertControllerStyle.Alert)
+//            
+//            alert.addTextFieldWithConfigurationHandler( { (textField: UITextField) -> Void in
+//                textField.placeholder = "Journal Title"
+//            })
+//            
+//            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+//            
+//            alert.addAction(cancelAction)
+//            let textField = alert.textFields![0]
+//            
+//            let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (_) -> Void in
+//                // this works with the exact ID in it.
+//                
+////                FirebaseController.journalBase.updateChildValues([self.title!: textField.text!])
+//                    FirebaseController.journalBase.childByAppendingPath("-K80mcPfmCp2AuaOtCy9").updateChildValues(["title": textField.text!])
+//
+//                if let newTitle = self.title {
+//                    self.title = newTitle
+//                } else {
+//                    self.title = self.title
+//                }
+//               print(textField.text!)
+//
+//            }
+//            
+//          alert.addAction(OKAction)
+//            self.presentViewController(alert, animated: true, completion: nil)
+//        }
+//        
+//        editAction.backgroundColor = .orangeColor()
+//    
+    return [deleteAction]
         
     }
     

@@ -15,29 +15,33 @@ class Journal: Equatable {
     
     var title: String
     let ref: Firebase?
+    let user: String
     
     init(title:String) {
         
         self.title = title
         self.ref = nil
-        
+        self.user = ""
     }
     
     init(snapshot: FDataSnapshot) {
         
         title = snapshot.value["title"] as! String
+        user = snapshot.value["user"] as! String
         ref = snapshot.ref
     }
     
     init?(dictionary: Dictionary<String, AnyObject>) {
-        guard let title = dictionary[titleKey] as? String else{
+        guard let title = dictionary[titleKey] as? String, user = dictionary["user"] as? String else{
             
             self.title = ""
             self.ref = nil
+            self.user = ""
             
             return nil
         }
         
+        self.user = user
         self.title = title
         self.ref = nil
     }

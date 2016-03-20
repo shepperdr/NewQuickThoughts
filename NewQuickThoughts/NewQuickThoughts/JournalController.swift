@@ -50,7 +50,6 @@ class JournalController {
             
             if let journalDict = snapshot.value as? [Dictionary<String, AnyObject>] {
                 self.journals = journalDict.map({Journal(dictionary: $0)!})
-                
             }
         })
         

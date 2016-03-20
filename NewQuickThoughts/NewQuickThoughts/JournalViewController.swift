@@ -157,7 +157,7 @@ class JournalViewController: UIViewController, UITableViewDataSource, UITableVie
         
         let action1 = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (_) -> Void in
             
-        FirebaseController.currentUserURL.childByAppendingPath("journals").childByAutoId().setValue(["title": textField.text!])
+        FirebaseController.journalBase.childByAutoId().setValue(["title": textField.text!, "user": (UserController.sharedInstance.currentUser?.ref)!])
             
             self.tableView.reloadData()
         }

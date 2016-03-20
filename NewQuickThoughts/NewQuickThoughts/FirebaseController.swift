@@ -17,7 +17,7 @@ class FirebaseController {
     static let userBase = base.childByAppendingPath("users")
     static let journalBase = base.childByAppendingPath("journal")
     static let journalNameRef = Firebase(url: "https://quickthoughts.firebaseio.com/journal/")
-    static let currentUserURL = Firebase(url: "https://quickthoughts.firebaseio.com/users/\(UserController.sharedInstance.currentUser!.ref!)")
+//    static let currentUserURL = userBase.childByAppendingPath(UserController.sharedInstance.currentUser!.ref!)
     
     static func dataAtEndpoint(endpoint: String, completion: (data: AnyObject?) -> Void) {
         
@@ -38,6 +38,8 @@ class FirebaseController {
             let arrayOfJournals = snapshot.children.allObjects
             JournalController.sharedInstance.journals = (arrayOfJournals.map{ Journal.init(snapshot: $0 as! FDataSnapshot)
                 })
+            let journals = JournalController.sharedInstance.journals as [Journal] ?? []
+            JournalController.sharedInstance.journals = journals.filter{($0.user == UserController.sharedInstance.currentUser?.ref)}
             
             completion()
         })

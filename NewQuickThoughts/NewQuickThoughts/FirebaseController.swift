@@ -17,7 +17,7 @@ class FirebaseController {
     static let userBase = base.childByAppendingPath("users")
     static let journalBase = base.childByAppendingPath("journal")
     static let journalNameRef = Firebase(url: "https://quickthoughts.firebaseio.com/journal/")
-//    static let currentUserURL = userBase.childByAppendingPath(UserController.sharedInstance.currentUser!.ref!)
+    static let currentUserURL = userBase.childByAppendingPath(UserController.sharedInstance.currentUser!.ref!)
     
     static func dataAtEndpoint(endpoint: String, completion: (data: AnyObject?) -> Void) {
         

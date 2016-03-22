@@ -8,6 +8,8 @@
 
 import UIKit
 import MessageUI
+import Firebase
+
 
 class SettingsViewController: UIViewController,MFMailComposeViewControllerDelegate {
     
@@ -21,6 +23,7 @@ class SettingsViewController: UIViewController,MFMailComposeViewControllerDelega
     
     @IBAction func logoutButtonTapped(segue: UIStoryboardSegue) {
         self.navigationController?.popToRootViewControllerAnimated(true)
+        UserController.sharedInstance.logoutUser()
         
         print("Logout Tapped")
     }

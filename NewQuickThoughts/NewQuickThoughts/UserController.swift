@@ -36,6 +36,10 @@ class UserController {
         })
     }
     
+    
+    func logoutUser() {
+        FirebaseController.currentUserURL.ref.unauth()
+    }
     func loginUser(email: String, password: String, completion: (user: User?) -> Void) {
         let ref = FirebaseController.base
         

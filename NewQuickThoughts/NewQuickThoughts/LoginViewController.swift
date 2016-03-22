@@ -43,15 +43,32 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginButtonPressed(sender: AnyObject) {
-        if !(passwordTextField.text == "" && emailTextField.text == "") {
-            UserController.sharedInstance.loginUser(emailTextField.text!, password: passwordTextField.text!, completion: { (user) -> Void in
+        print("login tapped")
+                if !(passwordTextField.text == "" && emailTextField.text == "") {
+            
+          UserController.sharedInstance.loginUser(emailTextField.text!, password: passwordTextField.text!, completion: { (user) -> Void in
                 if UserController.sharedInstance.currentUser == nil {
-                    print("error loading user, add an alert")
+                    
+                    print("error loading user")
+                    
+                    let errorAlert = UIAlertController(title: "Something went wrong when you tried to log in", message: "If you have an account already, please check your information and try again", preferredStyle: .Alert)
+                    let alertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel) {
+                        UIAlertAction in
+                        
+                    }
+                    
+                    errorAlert.addAction(alertAction)
+                    self.presentViewController(errorAlert, animated: true, completion: nil)
+
                     return
                 }
+            
                 self.performSegueWithIdentifier("loginSegue", sender: self)
+                
             })
+        
         }
+        
     }
    
     

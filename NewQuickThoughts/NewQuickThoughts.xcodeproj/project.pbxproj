@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		910A8B811CA0F97C003A1397 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 910A8B801CA0F97C003A1397 /* MessageUI.framework */; };
 		9112D9001C0E608F0086AF69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9112D8FF1C0E608F0086AF69 /* AppDelegate.swift */; };
 		9112D9051C0E608F0086AF69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9112D9031C0E608F0086AF69 /* Main.storyboard */; };
 		9112D9071C0E608F0086AF69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9112D9061C0E608F0086AF69 /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		910A8B801CA0F97C003A1397 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		9112D8FC1C0E608F0086AF69 /* NewQuickThoughts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewQuickThoughts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9112D8FF1C0E608F0086AF69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9112D9041C0E608F0086AF69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				910A8B811CA0F97C003A1397 /* MessageUI.framework in Frameworks */,
 				9112D93D1C0E68380086AF69 /* SystemConfiguration.framework in Frameworks */,
 				9112D93B1C0E682A0086AF69 /* CFNetwork.framework in Frameworks */,
 				9112D9391C0E68220086AF69 /* libc++.tbd in Frameworks */,
@@ -146,6 +149,7 @@
 		918704991C0E6D1B006CBB6F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				910A8B801CA0F97C003A1397 /* MessageUI.framework */,
 				9112D93C1C0E68380086AF69 /* SystemConfiguration.framework */,
 				9112D93A1C0E682A0086AF69 /* CFNetwork.framework */,
 				9112D9381C0E68220086AF69 /* libc++.tbd */,

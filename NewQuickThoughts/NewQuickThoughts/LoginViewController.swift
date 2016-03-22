@@ -49,7 +49,7 @@ class LoginViewController: UIViewController {
                     print("error loading user, add an alert")
                     return
                 }
-                self.performSegueWithIdentifier("segue", sender: self)
+                self.performSegueWithIdentifier("loginSegue", sender: self)
             })
         }
     }

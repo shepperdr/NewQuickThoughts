@@ -13,6 +13,8 @@ class JournalViewController: UIViewController, UITableViewDataSource, UITableVie
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBAction func settingsButtonPressed(sender: AnyObject) {
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -186,4 +188,5 @@ class JournalViewController: UIViewController, UITableViewDataSource, UITableVie
         }
         
     }
+    
 }

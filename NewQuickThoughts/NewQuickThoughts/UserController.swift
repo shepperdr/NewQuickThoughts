@@ -39,6 +39,7 @@ class UserController {
     
     func logoutUser() {
         FirebaseController.currentUserURL.ref.unauth()
+        currentUser = nil
     }
     func loginUser(email: String, password: String, completion: (user: User?) -> Void) {
         let ref = FirebaseController.base
@@ -52,7 +53,7 @@ class UserController {
                 let endpoint = "users/\(uid)"
                 
                 FirebaseController.dataAtEndpoint(endpoint, completion: { (data) -> Void in
-                    if let newUser = data as? String {
+                    if let _ = data as? String {
                         self.currentUser = User(email: email, password: password)
                         self.currentUser?.ref = uid
                         completion(user: self.currentUser)

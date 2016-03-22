@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15E64a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="zu9-Na-bh8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="zu9-Na-bh8">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -227,7 +227,7 @@
             </objects>
             <point key="canvasLocation" x="2423" y="799"/>
         </scene>
-        <!--Title-->
+        <!--Settings-->
         <scene sceneID="atO-6W-Egn">
             <objects>
                 <viewController id="Fmy-Ol-psO" customClass="SettingsViewController" customModule="NewQuickThoughts" customModuleProvider="target" sceneMemberID="viewController">
@@ -269,7 +269,7 @@
                             <constraint firstItem="BJj-Wa-HH2" firstAttribute="trailing" secondItem="Owg-L4-wdm" secondAttribute="trailing" id="zH4-d9-KvX"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="DBp-oG-bwZ">
+                    <navigationItem key="navigationItem" title="Settings" id="DBp-oG-bwZ">
                         <barButtonItem key="backBarButtonItem" title=" " id="e2n-pQ-bFb"/>
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="ov7-Pw-f9P">
                             <connections>
@@ -325,16 +325,22 @@
                                 <rect key="frame" x="47" y="138" width="500" height="30"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="TVM-15-pg3">
+                                <rect key="frame" x="282" y="281" width="37" height="37"/>
+                                <color key="color" cocoaTouchSystemColor="darkTextColor"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="w3B-Yg-kGu" firstAttribute="trailing" secondItem="ie5-uP-JTn" secondAttribute="trailing" id="0mj-at-wkR"/>
+                            <constraint firstItem="TVM-15-pg3" firstAttribute="centerY" secondItem="jtu-M7-DSf" secondAttribute="centerY" id="1kc-s4-bZD"/>
                             <constraint firstItem="AcW-CT-QPM" firstAttribute="leading" secondItem="jtu-M7-DSf" secondAttribute="leadingMargin" constant="27" id="79M-be-8w4"/>
                             <constraint firstItem="w3B-Yg-kGu" firstAttribute="leading" secondItem="ie5-uP-JTn" secondAttribute="leading" id="C68-MA-Pyy"/>
                             <constraint firstItem="Hmt-Z5-DY1" firstAttribute="top" secondItem="AcW-CT-QPM" secondAttribute="bottom" constant="15" id="CMM-ck-g4x"/>
                             <constraint firstItem="w3B-Yg-kGu" firstAttribute="centerX" secondItem="jtu-M7-DSf" secondAttribute="centerX" id="Nqz-62-x8w"/>
+                            <constraint firstItem="TVM-15-pg3" firstAttribute="centerX" secondItem="jtu-M7-DSf" secondAttribute="centerX" id="Ry3-hM-csP"/>
                             <constraint firstItem="AcW-CT-QPM" firstAttribute="leading" secondItem="Hmt-Z5-DY1" secondAttribute="leading" id="UZa-nA-0lr"/>
                             <constraint firstItem="w3B-Yg-kGu" firstAttribute="top" secondItem="Hmt-Z5-DY1" secondAttribute="bottom" constant="37" id="Y88-sa-FnU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="AcW-CT-QPM" secondAttribute="trailing" constant="33" id="iZb-ox-JeO"/>
@@ -344,6 +350,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="QLR-4m-yeM"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="TVM-15-pg3" id="Cuf-FR-uB8"/>
                         <outlet property="emailTextField" destination="AcW-CT-QPM" id="zUz-u6-hPc"/>
                         <outlet property="loginButton" destination="w3B-Yg-kGu" id="T8X-B9-iFU"/>
                         <outlet property="passwordTextField" destination="Hmt-Z5-DY1" id="0Mt-Pv-pBp"/>
@@ -368,7 +375,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DLz-Lc-M58" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-386" y="1120"/>
+            <point key="canvasLocation" x="-444" y="1136"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="muz-ln-rmD">

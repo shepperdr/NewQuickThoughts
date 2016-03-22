@@ -13,6 +13,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     
     
@@ -44,9 +45,10 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginButtonPressed(sender: AnyObject) {
         print("login tapped")
-                if !(passwordTextField.text == "" && emailTextField.text == "") {
-            
-          UserController.sharedInstance.loginUser(emailTextField.text!, password: passwordTextField.text!, completion: { (user) -> Void in
+        
+        if !(passwordTextField.text == "" && emailTextField.text == "") {
+            self.activityIndicator.startAnimating()
+            UserController.sharedInstance.loginUser(emailTextField.text!, password: passwordTextField.text!, completion: { (user) -> Void in
                 if UserController.sharedInstance.currentUser == nil {
                     
                     print("error loading user")
@@ -59,14 +61,16 @@ class LoginViewController: UIViewController {
                     
                     errorAlert.addAction(alertAction)
                     self.presentViewController(errorAlert, animated: true, completion: nil)
-
+                    self.activityIndicator.stopAnimating()
+                    
                     return
                 }
-            
+                self.passwordTextField.text = ""
+                self.activityIndicator.stopAnimating()
                 self.performSegueWithIdentifier("loginSegue", sender: self)
                 
             })
-        
+            
         }
         
     }

@@ -313,7 +313,6 @@
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="loginButtonPressed:" destination="ZRS-v4-PGn" eventType="touchUpInside" id="ju8-sc-169"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="loginSegue" id="ohy-nO-dqN"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AcW-CT-QPM">
@@ -348,6 +347,7 @@
                         <outlet property="emailTextField" destination="AcW-CT-QPM" id="zUz-u6-hPc"/>
                         <outlet property="loginButton" destination="w3B-Yg-kGu" id="T8X-B9-iFU"/>
                         <outlet property="passwordTextField" destination="Hmt-Z5-DY1" id="0Mt-Pv-pBp"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="loginSegue" id="O89-LV-zfi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kuA-bp-A5L" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -382,7 +382,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bum-ZF-wJ2">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bum-ZF-wJ2">
                                 <rect key="frame" x="20" y="78" width="560" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="D5O-6F-JCz"/>
@@ -391,7 +391,7 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XwR-kr-GSp">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XwR-kr-GSp">
                                 <rect key="frame" x="20" y="126" width="560" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="RZo-8u-78G"/>
@@ -400,7 +400,7 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="confirm" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eeG-5c-R4U">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="confirm" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eeG-5c-R4U">
                                 <rect key="frame" x="20" y="174" width="560" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Tcu-7Y-EtK"/>

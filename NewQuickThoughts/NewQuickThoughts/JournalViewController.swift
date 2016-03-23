@@ -23,8 +23,8 @@ class JournalViewController: UIViewController, UITableViewDataSource, UITableVie
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.translucent = true
         
-        FirebaseController.sharedInstance.fetchAllJournals { () -> () in
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+        FirebaseController.sharedInstance.fetchAllJournals {
+            dispatch_async(dispatch_get_main_queue(), {
                 self.tableView.reloadData()
             })
         }

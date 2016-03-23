@@ -83,8 +83,8 @@
 		9112D8F31C0E608F0086AF69 = {
 			isa = PBXGroup;
 			children = (
-				918704991C0E6D1B006CBB6F /* Frameworks */,
 				9112D8FE1C0E608F0086AF69 /* NewQuickThoughts */,
+				918704991C0E6D1B006CBB6F /* Frameworks */,
 				9112D8FD1C0E608F0086AF69 /* Products */,
 			);
 			sourceTree = "<group>";

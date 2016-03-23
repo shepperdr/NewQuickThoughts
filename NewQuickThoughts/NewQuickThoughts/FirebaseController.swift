@@ -37,9 +37,7 @@ class FirebaseController {
             
             let arrayOfJournals = snapshot.children.allObjects
             JournalController.sharedInstance.journals = (arrayOfJournals.map{ Journal.init(snapshot: $0 as! FDataSnapshot)
-                })
-            let journals = JournalController.sharedInstance.journals as [Journal] ?? []
-            JournalController.sharedInstance.journals = journals.filter{($0.user == UserController.sharedInstance.currentUser?.ref)}
+                }).filter{($0.user == UserController.sharedInstance.currentUser?.ref)}
             
             completion()
         })

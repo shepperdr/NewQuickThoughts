@@ -45,6 +45,11 @@ class SettingsViewController: UIViewController,MFMailComposeViewControllerDelega
         self.navigationController?.popViewControllerAnimated(true)
     }
     
+ 
+    @IBAction func deleteUserPressed(sender: AnyObject) {
+        UserController.sharedInstance.deleteUser()
+        self.navigationController?.popToRootViewControllerAnimated(true)
+    }
    
     
     func configureContactUsVC() -> MFMailComposeViewController {

@@ -29,14 +29,14 @@ class JournalViewController: UIViewController, UITableViewDataSource, UITableVie
             })
         }
         
-        let nc = NSNotificationCenter.defaultCenter()
+//        let nc = NSNotificationCenter.defaultCenter()
         
-        nc.addObserver(self, selector: "journalsUpdated:", name: journalsUpdateNotification, object: nil)
+//        nc.addObserver(self, selector: #selector(journalsUpdated(_:)), name: journalsUpdateNotification, object: nil)
         
     }
     
     func getUIDFromReference(specificJournalRef: String) -> String {
-        return specificJournalRef.substringWithRange(Range<String.Index>(start: specificJournalRef.startIndex.advancedBy(54), end: specificJournalRef.endIndex.advancedBy(-1)))
+        return specificJournalRef.substringWithRange(Range(specificJournalRef.startIndex.advancedBy(54) ..< specificJournalRef.endIndex.advancedBy(-1)))
     }
     
     func thoughtsUpdated(notification: NSNotification) {

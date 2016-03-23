@@ -18,7 +18,7 @@ class ThoughtsViewController: UIViewController, UITableViewDataSource {
         
         let nc = NSNotificationCenter.defaultCenter()
         
-        nc.addObserver(self, selector: "thoughtsUpdated:", name: thoughtsUpdateNotification, object: nil)
+        nc.addObserver(self, selector: #selector(ThoughtsViewController.thoughtsUpdated(_:)), name: thoughtsUpdateNotification, object: nil)
         
     }
     

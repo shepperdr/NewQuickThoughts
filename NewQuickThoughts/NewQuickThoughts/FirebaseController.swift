@@ -48,7 +48,7 @@ class FirebaseController {
         
         let specificJournalRef = "\(journal.ref)"
         print(specificJournalRef)
-        let specificJournalUID = specificJournalRef.substringWithRange(Range<String.Index>(start: specificJournalRef.startIndex.advancedBy(54), end: specificJournalRef.endIndex.advancedBy(-1)))
+        let specificJournalUID = specificJournalRef.substringWithRange(Range(specificJournalRef.startIndex.advancedBy(54) ..< specificJournalRef.endIndex.advancedBy(-1)))
         print(specificJournalUID)
         
         FirebaseController.journalBase.childByAppendingPath(specificJournalUID).childByAppendingPath("Thoughts").observeEventType(.Value, withBlock: { (snapshot) -> Void in

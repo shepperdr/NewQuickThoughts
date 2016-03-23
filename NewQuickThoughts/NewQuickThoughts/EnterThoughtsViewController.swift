@@ -30,7 +30,7 @@ class EnterThoughtsViewController: UIViewController, UITextFieldDelegate, UIText
         
         titleTextField.delegate = self
         enterThoughtsView.addGestureRecognizer(tapRec)
-        tapRec.addTarget(self, action: "tappedView")
+        tapRec.addTarget(self, action: #selector(EnterThoughtsViewController.tappedView))
         
         // Hy added this for visual effects
         UITextField.appearance().tintColor = UIColor.darkGrayColor()
@@ -72,7 +72,7 @@ class EnterThoughtsViewController: UIViewController, UITextFieldDelegate, UIText
             thought.bodyText = self.bodyTextView.text
             
             let specificThoughtRef = "\(thought.ref)"
-            let specificThoughtID = specificThoughtRef.substringWithRange(Range<String.Index>(start: specificThoughtRef.startIndex.advancedBy(54), end: specificThoughtRef.endIndex.advancedBy(-1)))
+            let specificThoughtID = specificThoughtRef.substringWithRange(Range(specificThoughtRef.startIndex.advancedBy(54) ..< specificThoughtRef.endIndex.advancedBy(-1)))
             
             FirebaseController.journalBase.childByAppendingPath("\(specificThoughtID)").updateChildValues(["title": self.titleTextField.text!, "bodyText": self.bodyTextView.text])
             

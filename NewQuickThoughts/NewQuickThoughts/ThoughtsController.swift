@@ -56,8 +56,7 @@ class ThoughtsController {
         
         let specificJournalRef = "\(journal.ref)"
         
-        let specificJournalUID = specificJournalRef.substringWithRange(Range<String.Index>(start: specificJournalRef.startIndex.advancedBy(54), end: specificJournalRef.endIndex.advancedBy(-1)))
-        
+        let specificJournalUID = specificJournalRef.substringWithRange(Range(specificJournalRef.startIndex.advancedBy(54) ..< specificJournalRef.endIndex.advancedBy(-1)))
         
         let journalRef = FirebaseController.journalBase.childByAppendingPath(specificJournalUID).childByAppendingPath("Thoughts").childByAutoId()
         journalRef.setValue(thought.dictionaryCopy()) { (error, firebase) -> Void in

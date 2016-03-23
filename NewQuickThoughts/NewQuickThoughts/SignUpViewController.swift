@@ -59,10 +59,13 @@ class SignUpViewController: UIViewController {
         if password.text == confirmPassword.text {
             UserController.sharedInstance.createUser(emailTextField.text!, password: password.text!) { (user) -> Void in
                 if UserController.sharedInstance.currentUser == nil {
-                    print("error loading user, add an alert")
+                    let errorAlert = UIAlertController(title: "Unable to sign up", message: "Unable to sign up with this email because it is either in use or entered incorrectly. Please verify your email and try again.", preferredStyle: .Alert)
+                    let OKAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                    errorAlert.addAction(OKAction)
+                    self.presentViewController(errorAlert, animated: true, completion: nil)
                     return
                 }
-                self.performSegueWithIdentifier("segue", sender: self)
+                self.performSegueWithIdentifier("submitSegue", sender: self)
             }
         } else {
             print("add alert to indicate passwordTextField and confirmPasswordTextField are not the same")

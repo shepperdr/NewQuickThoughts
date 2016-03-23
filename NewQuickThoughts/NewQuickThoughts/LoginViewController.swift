@@ -49,24 +49,20 @@ class LoginViewController: UIViewController {
         if !(passwordTextField.text == "" && emailTextField.text == "") {
             self.activityIndicator.startAnimating()
             UserController.sharedInstance.loginUser(emailTextField.text!, password: passwordTextField.text!, completion: { (user) -> Void in
+                
                 if UserController.sharedInstance.currentUser == nil {
-                    
-                    print("error loading user")
-                    
                     let errorAlert = UIAlertController(title: "Something went wrong when you tried to log in", message: "If you have an account already, please check your information and try again. If you don't have an account Sign Up!", preferredStyle: .Alert)
-                    
-                    let OKAction = UIAlertAction(title: "OK", style: .Cancel, handler: nil)
-                    
+                    let OKAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
                     errorAlert.addAction(OKAction)
                     
-                    let signupAction = UIAlertAction(title: "Sign Up!", style: UIAlertActionStyle.Destructive) { (_) -> Void in
-                        
+                    let signupAction = UIAlertAction(title: "Sign Up!", style: .Default) { (_) in
                         self.performSegueWithIdentifier("toSignUp", sender: self)
                     }
                     
                     errorAlert.addAction(signupAction)
                     
                     self.presentViewController(errorAlert, animated: true, completion: nil)
+                    self.activityIndicator.stopAnimating()
                     return
                 }
                 self.passwordTextField.text = ""

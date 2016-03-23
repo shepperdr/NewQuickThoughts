@@ -53,16 +53,20 @@ class LoginViewController: UIViewController {
                     
                     print("error loading user")
                     
-                    let errorAlert = UIAlertController(title: "Something went wrong when you tried to log in", message: "If you have an account already, please check your information and try again", preferredStyle: .Alert)
-                    let alertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel) {
-                        UIAlertAction in
+                    let errorAlert = UIAlertController(title: "Something went wrong when you tried to log in", message: "If you have an account already, please check your information and try again. If you don't have an account Sign Up!", preferredStyle: .Alert)
+                    
+                    let OKAction = UIAlertAction(title: "OK", style: .Cancel, handler: nil)
+                    
+                    errorAlert.addAction(OKAction)
+                    
+                    let signupAction = UIAlertAction(title: "Sign Up!", style: UIAlertActionStyle.Destructive) { (_) -> Void in
                         
+                        self.performSegueWithIdentifier("toSignUp", sender: self)
                     }
                     
-                    errorAlert.addAction(alertAction)
-                    self.presentViewController(errorAlert, animated: true, completion: nil)
-                    self.activityIndicator.stopAnimating()
+                    errorAlert.addAction(signupAction)
                     
+                    self.presentViewController(errorAlert, animated: true, completion: nil)
                     return
                 }
                 self.passwordTextField.text = ""
@@ -74,7 +78,7 @@ class LoginViewController: UIViewController {
         }
         
     }
-   
+    
     
     /*
     // MARK: - Navigation

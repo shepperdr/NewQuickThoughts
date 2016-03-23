@@ -66,4 +66,17 @@ class UserController {
         })
     }
     
+    func deleteUser() {
+        let ref =  FirebaseController.base
+        ref.removeUser(currentUser?.email, password: currentUser?.password,
+                       withCompletionBlock: { error in
+                        if error != nil {
+                            // There was an error processing the request
+                        } else {
+                            // Password changed successfully
+                        }
+        })
+        FirebaseController.currentUserURL.removeValue()
+        currentUser = nil
+    }
 }

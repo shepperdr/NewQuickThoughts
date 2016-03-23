@@ -258,14 +258,26 @@
                                     <action selector="contactUsButtonTapped:" destination="Fmy-Ol-psO" eventType="touchUpInside" id="69d-Zx-zQN"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cr2-bH-BE3">
+                                <rect key="frame" x="20" y="222" width="560" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Delete User"/>
+                                <connections>
+                                    <action selector="deleteUserPressed:" destination="Fmy-Ol-psO" eventType="touchUpInside" id="KzG-1D-Wow"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Owg-L4-wdm" firstAttribute="leading" secondItem="Uqp-9w-WWg" secondAttribute="leadingMargin" id="BCW-4V-6JS"/>
                             <constraint firstItem="BJj-Wa-HH2" firstAttribute="top" secondItem="Owg-L4-wdm" secondAttribute="bottom" constant="35" id="FuQ-Ig-RTx"/>
                             <constraint firstItem="BJj-Wa-HH2" firstAttribute="trailing" secondItem="Uqp-9w-WWg" secondAttribute="trailingMargin" id="VOG-3w-Ug0"/>
+                            <constraint firstItem="cr2-bH-BE3" firstAttribute="top" secondItem="BJj-Wa-HH2" secondAttribute="bottom" constant="35" id="aE9-LB-lj3"/>
                             <constraint firstItem="BJj-Wa-HH2" firstAttribute="leading" secondItem="Owg-L4-wdm" secondAttribute="leading" id="bHN-kr-2RW"/>
                             <constraint firstItem="Owg-L4-wdm" firstAttribute="top" secondItem="VTm-gb-G5S" secondAttribute="bottom" constant="28" id="hbZ-tY-ATU"/>
+                            <constraint firstItem="cr2-bH-BE3" firstAttribute="leading" secondItem="BJj-Wa-HH2" secondAttribute="leading" id="i64-Ey-upC"/>
+                            <constraint firstItem="cr2-bH-BE3" firstAttribute="trailing" secondItem="BJj-Wa-HH2" secondAttribute="trailing" id="seK-bc-RB3"/>
                             <constraint firstItem="BJj-Wa-HH2" firstAttribute="trailing" secondItem="Owg-L4-wdm" secondAttribute="trailing" id="zH4-d9-KvX"/>
                         </constraints>
                     </view>
@@ -295,7 +307,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ie5-uP-JTn">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ie5-uP-JTn">
                                 <rect key="frame" x="226" y="550" width="148" height="30"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                 <state key="normal" title="Sign Up"/>
@@ -331,6 +343,15 @@
                                 <rect key="frame" x="282" y="281" width="37" height="37"/>
                                 <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wze-NJ-L0k">
+                                <rect key="frame" x="243" y="243" width="115" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Forgot Password"/>
+                                <connections>
+                                    <segue destination="zts-iI-nhP" kind="show" id="ppx-Xr-YUJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -339,11 +360,14 @@
                             <constraint firstItem="AcW-CT-QPM" firstAttribute="leading" secondItem="jtu-M7-DSf" secondAttribute="leadingMargin" constant="27" id="79M-be-8w4"/>
                             <constraint firstItem="w3B-Yg-kGu" firstAttribute="leading" secondItem="ie5-uP-JTn" secondAttribute="leading" id="C68-MA-Pyy"/>
                             <constraint firstItem="Hmt-Z5-DY1" firstAttribute="top" secondItem="AcW-CT-QPM" secondAttribute="bottom" constant="15" id="CMM-ck-g4x"/>
+                            <constraint firstItem="Wze-NJ-L0k" firstAttribute="top" secondItem="w3B-Yg-kGu" secondAttribute="bottom" constant="8" symbolic="YES" id="GiO-qi-BFi"/>
                             <constraint firstItem="w3B-Yg-kGu" firstAttribute="centerX" secondItem="jtu-M7-DSf" secondAttribute="centerX" id="Nqz-62-x8w"/>
                             <constraint firstItem="TVM-15-pg3" firstAttribute="centerX" secondItem="jtu-M7-DSf" secondAttribute="centerX" id="Ry3-hM-csP"/>
+                            <constraint firstItem="Wze-NJ-L0k" firstAttribute="centerX" secondItem="w3B-Yg-kGu" secondAttribute="centerX" id="Tek-Wk-5I2"/>
                             <constraint firstItem="AcW-CT-QPM" firstAttribute="leading" secondItem="Hmt-Z5-DY1" secondAttribute="leading" id="UZa-nA-0lr"/>
                             <constraint firstItem="w3B-Yg-kGu" firstAttribute="top" secondItem="Hmt-Z5-DY1" secondAttribute="bottom" constant="37" id="Y88-sa-FnU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="AcW-CT-QPM" secondAttribute="trailing" constant="33" id="iZb-ox-JeO"/>
+                            <constraint firstAttribute="bottom" secondItem="ie5-uP-JTn" secondAttribute="bottom" constant="20" symbolic="YES" id="nVI-0V-DZn"/>
                             <constraint firstItem="AcW-CT-QPM" firstAttribute="top" secondItem="hu3-Jo-Zmz" secondAttribute="bottom" constant="29" id="u7b-EK-bPe"/>
                             <constraint firstItem="AcW-CT-QPM" firstAttribute="trailing" secondItem="Hmt-Z5-DY1" secondAttribute="trailing" id="xY9-Xi-nJc"/>
                         </constraints>
@@ -360,6 +384,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kuA-bp-A5L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="242" y="1136"/>
+        </scene>
+        <!--Forgot Password View Controller-->
+        <scene sceneID="gKt-lu-k4X">
+            <objects>
+                <viewController id="zts-iI-nhP" customClass="ForgotPasswordViewController" customModule="NewQuickThoughts" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Zh3-UF-fZi"/>
+                        <viewControllerLayoutGuide type="bottom" id="VqJ-OL-O88"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3C2-aD-6wX">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T1L-fL-gxZ">
+                                <rect key="frame" x="246" y="160" width="109" height="30"/>
+                                <state key="normal" title="Reset Password"/>
+                                <connections>
+                                    <action selector="resetPasswordPressed:" destination="zts-iI-nhP" eventType="touchUpInside" id="TgR-3m-DxG"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QNr-2u-U8r">
+                                <rect key="frame" x="50" y="93" width="500" height="30"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QNr-2u-U8r" firstAttribute="top" secondItem="Zh3-UF-fZi" secondAttribute="bottom" constant="29" id="Fkg-yM-a3G"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QNr-2u-U8r" secondAttribute="trailing" constant="30" id="TL3-eG-o3O"/>
+                            <constraint firstItem="QNr-2u-U8r" firstAttribute="centerX" secondItem="T1L-fL-gxZ" secondAttribute="centerX" id="ZdS-Jq-VU9"/>
+                            <constraint firstItem="QNr-2u-U8r" firstAttribute="centerX" secondItem="3C2-aD-6wX" secondAttribute="centerX" id="a6B-A3-eBU"/>
+                            <constraint firstItem="QNr-2u-U8r" firstAttribute="leading" secondItem="3C2-aD-6wX" secondAttribute="leadingMargin" constant="30" id="jib-hA-pgt"/>
+                            <constraint firstItem="T1L-fL-gxZ" firstAttribute="top" secondItem="QNr-2u-U8r" secondAttribute="bottom" constant="37" id="kd0-h3-0M9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="QNr-2u-U8r" id="Xwn-B6-CFQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7GC-b8-f3o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="242" y="1872"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="QEw-Wx-2G1">
@@ -462,7 +530,7 @@
         <image name="settings" width="20" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Qw6-zr-Ibn"/>
+        <segue reference="O89-LV-zfi"/>
         <segue reference="hZW-gp-Zq3"/>
     </inferredMetricsTieBreakers>
 </document>

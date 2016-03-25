@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Firebase
 
 class UserController {
     
@@ -47,6 +48,19 @@ class UserController {
         
         ref.authUser(email, password: password, withCompletionBlock: { (error, authData) in
             if error != nil {
+                // an error occurred while attempting login
+                if let errorCode =  FAuthenticationError(rawValue: error.code) {
+                    switch (errorCode) {
+                    case .UserDoesNotExist:
+                        print("Handle invalid user")
+                    case .InvalidEmail:
+                        print("Handle invalid email")
+                    case .InvalidPassword:
+                        print("Handle invalid password")
+                    default:
+                        print("Handle default situation")
+                    }
+                }
                 completion(user: nil)
             } else {
                 let uid = authData.uid

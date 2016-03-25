@@ -16,9 +16,9 @@ class ThoughtsViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let nc = NSNotificationCenter.defaultCenter()
-        
-        nc.addObserver(self, selector: #selector(ThoughtsViewController.thoughtsUpdated(_:)), name: thoughtsUpdateNotification, object: nil)
+//        let nc = NSNotificationCenter.defaultCenter()
+//        
+//        nc.addObserver(self, selector: #selector(ThoughtsViewController.thoughtsUpdated(_:)), name: thoughtsUpdateNotification, object: nil)
         
     }
     

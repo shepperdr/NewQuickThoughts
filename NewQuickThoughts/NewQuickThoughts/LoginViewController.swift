@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController {
     
@@ -48,27 +49,36 @@ class LoginViewController: UIViewController {
         
         if !(passwordTextField.text == "" && emailTextField.text == "") {
             self.activityIndicator.startAnimating()
-            UserController.sharedInstance.loginUser(emailTextField.text!, password: passwordTextField.text!, completion: { (user) -> Void in
+            UserController.sharedInstance.loginUser(emailTextField.text!, password: passwordTextField.text!, completion: { (user, error) -> Void in
                 
-                if UserController.sharedInstance.currentUser == nil {
-                    let errorAlert = UIAlertController(title: "Something went wrong when you tried to log in", message: "If you have an account already, please check your information and try again. If you don't have an account Sign Up!", preferredStyle: .Alert)
-                    let OKAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
-                    errorAlert.addAction(OKAction)
-                    
-                    let signupAction = UIAlertAction(title: "Sign Up!", style: .Default) { (_) in
-                        self.performSegueWithIdentifier("toSignUp", sender: self)
+                    if let error = error, errorCode = FAuthenticationError(rawValue: error.code) {
+                        var alertTitle = ""
+                        switch (errorCode) {
+                        case .UserDoesNotExist:
+                            alertTitle = "This user does not exist"
+                        case .InvalidEmail:
+                            alertTitle = "There is not a user associated with this email"
+                        case .InvalidPassword:
+                            alertTitle = "Password does not match email"
+                        default:
+                            return
+                        }
+                        let errorAlert = UIAlertController(title: alertTitle, message: "If you have an account, please check your information and try again. If you do not Sign Up!", preferredStyle: .Alert)
+                        let OKAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                        errorAlert.addAction(OKAction)
+                        
+                        let signupAction = UIAlertAction(title: "Sign Up!", style: .Default) { (_) in
+                            self.performSegueWithIdentifier("toSignUp", sender: self)
+                        }
+                        
+                        errorAlert.addAction(signupAction)
+                        
+                        self.presentViewController(errorAlert, animated: true, completion: nil)
+                        self.activityIndicator.stopAnimating()
                     }
-                    
-                    errorAlert.addAction(signupAction)
-                    
-                    self.presentViewController(errorAlert, animated: true, completion: nil)
-                    self.activityIndicator.stopAnimating()
-                    return
-                }
                 self.passwordTextField.text = ""
                 self.activityIndicator.stopAnimating()
                 self.performSegueWithIdentifier("loginSegue", sender: self)
-                
             })
             
         }

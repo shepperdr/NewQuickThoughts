@@ -15,22 +15,22 @@ class UserController {
     
     var currentUser: User?
     
-    func createUser(email: String, password: String, completion: (user: User?) -> Void) {
+    func createUser(email: String, password: String, completion: (user: User?, error: NSError?) -> Void) {
         let ref = FirebaseController.userBase
         
         ref.createUser(email, password: password, withValueCompletionBlock: { (error, result) in
             
             if error != nil {
-                completion(user: nil)
+                completion(user: nil, error: error)
             } else {
                 if let uid = result["uid"] as? String {
                     ref.updateChildValues([uid : email])
                     
-                    self.loginUser(email, password: password, completion: { (user) -> Void in
-                        completion(user: user)
+                    self.loginUser(email, password: password, completion: { (user, error) -> Void in
+                        completion(user: user, error: error)
                     })
                 } else {
-                    completion(user: nil)
+                    completion(user: nil, error: error)
                 }
             }
             
@@ -43,39 +43,19 @@ class UserController {
         currentUser = nil
     }
     
-    func loginUser(email: String, password: String, completion: (user: User?) -> Void) {
+    func loginUser(email: String, password: String, completion: (user: User?, error: NSError?) -> Void) {
         let ref = FirebaseController.base
         
         ref.authUser(email, password: password, withCompletionBlock: { (error, authData) in
             if error != nil {
                 // an error occurred while attempting login
-                if let errorCode =  FAuthenticationError(rawValue: error.code) {
-                    switch (errorCode) {
-                    case .UserDoesNotExist:
-                        print("Handle invalid user")
-                    case .InvalidEmail:
-                        print("Handle invalid email")
-                    case .InvalidPassword:
-                        print("Handle invalid password")
-                    default:
-                        print("Handle default situation")
-                    }
-                }
-                completion(user: nil)
+                completion(user: nil, error: error)
             } else {
                 let uid = authData.uid
                 
-                let endpoint = "users/\(uid)"
-                
-                FirebaseController.dataAtEndpoint(endpoint, completion: { (data) -> Void in
-                    if let _ = data as? String {
-                        self.currentUser = User(email: email, password: password)
-                        self.currentUser?.ref = uid
-                        completion(user: self.currentUser)
-                    } else {
-                        completion(user: nil)
-                    }
-                })
+                self.currentUser = User(email: email, password: password)
+                self.currentUser?.ref = uid
+                completion(user: self.currentUser, error: error)
             }
         })
     }

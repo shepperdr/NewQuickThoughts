@@ -19,6 +19,56 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let ref = FirebaseController.base
+        if ref.authData != nil {
+            // user authenticated
+            print("\(ref.authData)")
+            print("\(ref.authData.providerData)")
+            print("\(ref.authData.provider)")
+            print("\(ref.authData.uid)")
+            print("\(ref.authData.auth)")
+            print("\(ref.authData.description)")
+            guard let authDictionary = ref.authData.providerData as? [String: AnyObject] else { return }
+            UserController.sharedInstance.loginUser(authDictionary["email"] as! String, password: ref.authData.provider, completion: { (user, error) -> Void in
+                
+                if let error = error, errorCode = FAuthenticationError(rawValue: error.code) {
+                    var alertTitle = ""
+                    switch (errorCode) {
+                    case .UserDoesNotExist:
+                        alertTitle = "This user does not exist"
+                    case .InvalidEmail:
+                        alertTitle = "Invalid email"
+                    case .InvalidPassword:
+                        alertTitle = "Password does not match email"
+                    default:
+                        return
+                    }
+                    let errorAlert = UIAlertController(title: alertTitle, message: "If you have an account, please check your information and try again. If you do not Sign Up!", preferredStyle: .Alert)
+                    let OKAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                    errorAlert.addAction(OKAction)
+                    
+                    let signupAction = UIAlertAction(title: "Sign Up!", style: .Default) { (_) in
+                        self.performSegueWithIdentifier("toSignUp", sender: self)
+                    }
+                    
+                    errorAlert.addAction(signupAction)
+                    
+                    self.presentViewController(errorAlert, animated: true, completion: nil)
+                    self.activityIndicator.stopAnimating()
+                }
+                self.passwordTextField.text = ""
+                self.activityIndicator.stopAnimating()
+                self.performSegueWithIdentifier("loginSegue", sender: self)
+            })
+
+//            UserController.sharedInstance.currentUser = UserController.sharedInstance.loginUser(authDictionary["email"] as! String, password: ref.authData.provider, completion: { (user, error) -> Void in
+//                self.performSegueWithIdentifier("loginSegue", sender: self)
+//            })
+            
+        
+        } else {
+            // No user is signed in
+        }
     }
     
     // This adds some design to the Username and password textFields

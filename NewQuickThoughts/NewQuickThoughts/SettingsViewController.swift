@@ -16,16 +16,21 @@ class SettingsViewController: UIViewController,MFMailComposeViewControllerDelega
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         // Do any additional setup after loading the view.
     }
     
     @IBAction func logoutButtonTapped(segue: UIStoryboardSegue) {
-        self.navigationController?.popToRootViewControllerAnimated(true)
-        UserController.sharedInstance.logoutUser()
+        let errorAlert = UIAlertController(title: "Are you sure you want to log out of your account?", message: "", preferredStyle: .Alert)
+        let OKAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        errorAlert.addAction(OKAction)
         
-        print("Logout Tapped")
+        let logoutAction = UIAlertAction(title: "Logout", style: .Destructive) { (_) in
+            UserController.sharedInstance.logoutUser()
+            self.navigationController?.popToRootViewControllerAnimated(true)
+        }
+        errorAlert.addAction(logoutAction)
+        
+        self.presentViewController(errorAlert, animated: true, completion: nil)
     }
     
     @IBAction func contactUsButtonTapped(sender: AnyObject) {
@@ -47,8 +52,17 @@ class SettingsViewController: UIViewController,MFMailComposeViewControllerDelega
     
  
     @IBAction func deleteUserPressed(sender: AnyObject) {
-        UserController.sharedInstance.deleteUser()
-        self.navigationController?.popToRootViewControllerAnimated(true)
+        let errorAlert = UIAlertController(title: "Are you sure you want to delete your account?", message: "", preferredStyle: .Alert)
+        let OKAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        errorAlert.addAction(OKAction)
+        
+        let deleteAction = UIAlertAction(title: "Delete", style: .Destructive) { (_) in
+            UserController.sharedInstance.deleteUser()
+            self.navigationController?.popToRootViewControllerAnimated(true)
+        }
+        errorAlert.addAction(deleteAction)
+        self.presentViewController(errorAlert, animated: true, completion: nil)
+       
     }
    
     

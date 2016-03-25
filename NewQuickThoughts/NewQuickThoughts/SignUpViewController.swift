@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SignUpViewController: UIViewController {
     
@@ -57,9 +58,19 @@ class SignUpViewController: UIViewController {
     
     @IBAction func submitButtonPressed(sender: AnyObject) {
         if password.text == confirmPassword.text {
-            UserController.sharedInstance.createUser(emailTextField.text!, password: password.text!) { (user) -> Void in
-                if UserController.sharedInstance.currentUser == nil {
-                    let errorAlert = UIAlertController(title: "Unable to sign up", message: "Unable to sign up with this email because it is either in use or entered incorrectly. Please verify your email and try again.", preferredStyle: .Alert)
+            UserController.sharedInstance.createUser(emailTextField.text!, password: password.text!) { (user, error) -> Void in
+                
+                if let error = error, errorCode = FAuthenticationError(rawValue: error.code) {
+                    var alertTitle = ""
+                    switch (errorCode) {
+                    case .EmailTaken:
+                        alertTitle = "There is already an account associated with this email"
+                    case .InvalidEmail:
+                        alertTitle = "This email is invalid"
+                    default:
+                        return
+                    }
+                    let errorAlert = UIAlertController(title: alertTitle, message: "Please verify your email and try again.", preferredStyle: .Alert)
                     let OKAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
                     errorAlert.addAction(OKAction)
                     self.presentViewController(errorAlert, animated: true, completion: nil)
@@ -68,11 +79,14 @@ class SignUpViewController: UIViewController {
                 self.performSegueWithIdentifier("submitSegue", sender: self)
             }
         } else {
-            print("add alert to indicate passwordTextField and confirmPasswordTextField are not the same")
+            let errorAlert = UIAlertController(title: "Password fields do not match", message: "Please verify your password and try again.", preferredStyle: .Alert)
+            let OKAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            errorAlert.addAction(OKAction)
+            self.presentViewController(errorAlert, animated: true, completion: nil)
+            self.password.text = ""
+            self.emailTextField.text = ""
+            self.confirmPassword.text = ""
         }
-        
     }
-    
-    
     
 }

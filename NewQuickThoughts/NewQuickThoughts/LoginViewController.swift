@@ -16,8 +16,6 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -80,9 +78,8 @@ class LoginViewController: UIViewController {
                 self.activityIndicator.stopAnimating()
                 self.performSegueWithIdentifier("loginSegue", sender: self)
             })
-            
         }
-        
+    
     }
     
     

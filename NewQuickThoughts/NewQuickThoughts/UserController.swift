@@ -73,4 +73,12 @@ class UserController {
         FirebaseController.currentUserURL.removeValue()
         currentUser = nil
     }
+    
+    func changePassword(oldPassword: String, newPassword: String, completion: (NSError?) -> Void) {
+        let ref = FirebaseController.base
+        ref.changePasswordForUser(currentUser?.email, fromOld: oldPassword,
+                                  toNew: newPassword, withCompletionBlock: { error in
+                                    completion(error)
+        })
+    }
 }

@@ -46,8 +46,7 @@ class SettingsViewController: UIViewController,MFMailComposeViewControllerDelega
     }
     
     @IBAction func cancelButtonPressed(sender: AnyObject) {
-        print("cancel pressed!")
-        self.navigationController?.popViewControllerAnimated(true)
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
  
@@ -103,6 +102,53 @@ class SettingsViewController: UIViewController,MFMailComposeViewControllerDelega
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 
+    @IBAction func changePasswordPressed(sender: AnyObject) {
+        
+        let alert = UIAlertController(title: "Change Password", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        alert.addTextFieldWithConfigurationHandler( { (textField: UITextField) -> Void in
+            textField.placeholder = "Current Password"
+        })
+        
+        alert.addTextFieldWithConfigurationHandler( { (textField: UITextField) -> Void in
+            textField.placeholder = "New Password"
+        })
+        
+        let action0 = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        
+        alert.addAction(action0)
+        let currentPasswordTextField = alert.textFields![0]
+        let newPasswordTextField = alert.textFields![1]
+        
+        let action1 = UIAlertAction(title: "Update", style: UIAlertActionStyle.Default) { (_) -> Void in
+            UserController.sharedInstance.changePassword(currentPasswordTextField.text!, newPassword: newPasswordTextField.text!, completion: { (error) in
+                if let error = error, errorCode = FAuthenticationError(rawValue: error.code) {
+                    var alertTitle = ""
+                    switch (errorCode) {
+                    case .InvalidPassword:
+                        alertTitle = "Current password is invalid"
+                    default:
+                        return
+                    }
+                    let errorAlert = UIAlertController(title: alertTitle, message: "Please verify your current password and try again.", preferredStyle: .Alert)
+                    let OKAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                    errorAlert.addAction(OKAction)
+                    self.presentViewController(errorAlert, animated: true, completion: nil)
+                } else {
+                    let successAlert = UIAlertController(title: "Your password was successfully changed", message: "", preferredStyle: .Alert)
+                    let OKAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                    successAlert.addAction(OKAction)
+                    self.presentViewController(successAlert, animated: true, completion: nil)
+                }
+            })
+        }
+        
+        alert.addAction(action1)
+        
+        self.presentViewController(alert, animated: true, completion: nil)
+
+        
+    }
     
     
     /*

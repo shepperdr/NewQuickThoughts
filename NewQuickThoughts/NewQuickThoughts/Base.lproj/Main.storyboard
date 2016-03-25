@@ -26,7 +26,7 @@
                                         <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vNJ-Gb-S3H" id="6T3-ba-zwx">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
@@ -53,7 +53,7 @@
                         <barButtonItem key="leftBarButtonItem" image="settings" id="ynT-4y-hcy">
                             <connections>
                                 <action selector="settingsButtonPressed:" destination="BYZ-38-t0r" id="ybD-dP-Rby"/>
-                                <segue destination="Fmy-Ol-psO" kind="show" identifier="toSettings" id="kSh-v7-S14"/>
+                                <segue destination="Fmy-Ol-psO" kind="presentation" identifier="toSettings" modalTransitionStyle="flipHorizontal" id="kSh-v7-S14"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="newJournal" id="bqD-r1-0dp">
@@ -90,7 +90,7 @@
                                         <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jM2-aI-1wd" id="N5h-B4-AIh">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
@@ -267,27 +267,50 @@
                                     <action selector="deleteUserPressed:" destination="Fmy-Ol-psO" eventType="touchUpInside" id="KzG-1D-Wow"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lzi-pg-0SH">
+                                <rect key="frame" x="20" y="287" width="560" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Change Password"/>
+                                <connections>
+                                    <action selector="changePasswordPressed:" destination="Fmy-Ol-psO" eventType="touchUpInside" id="olj-iO-fG1"/>
+                                </connections>
+                            </button>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fHm-Fz-zh2">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Settings" id="gaI-Ga-Nox">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="09g-cu-Tqq">
+                                            <connections>
+                                                <action selector="cancelButtonPressed:" destination="Fmy-Ol-psO" id="cSO-rU-ePR"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="fHm-Fz-zh2" firstAttribute="leading" secondItem="Uqp-9w-WWg" secondAttribute="leading" id="6jU-7I-ZWg"/>
+                            <constraint firstItem="Lzi-pg-0SH" firstAttribute="trailing" secondItem="cr2-bH-BE3" secondAttribute="trailing" id="9RI-Ny-ZuJ"/>
                             <constraint firstItem="Owg-L4-wdm" firstAttribute="leading" secondItem="Uqp-9w-WWg" secondAttribute="leadingMargin" id="BCW-4V-6JS"/>
+                            <constraint firstItem="Owg-L4-wdm" firstAttribute="top" secondItem="fHm-Fz-zh2" secondAttribute="bottom" constant="28" id="F3L-s5-K5S"/>
                             <constraint firstItem="BJj-Wa-HH2" firstAttribute="top" secondItem="Owg-L4-wdm" secondAttribute="bottom" constant="35" id="FuQ-Ig-RTx"/>
+                            <constraint firstItem="fHm-Fz-zh2" firstAttribute="top" secondItem="VTm-gb-G5S" secondAttribute="bottom" id="J2m-Ky-840"/>
                             <constraint firstItem="BJj-Wa-HH2" firstAttribute="trailing" secondItem="Uqp-9w-WWg" secondAttribute="trailingMargin" id="VOG-3w-Ug0"/>
                             <constraint firstItem="cr2-bH-BE3" firstAttribute="top" secondItem="BJj-Wa-HH2" secondAttribute="bottom" constant="35" id="aE9-LB-lj3"/>
                             <constraint firstItem="BJj-Wa-HH2" firstAttribute="leading" secondItem="Owg-L4-wdm" secondAttribute="leading" id="bHN-kr-2RW"/>
-                            <constraint firstItem="Owg-L4-wdm" firstAttribute="top" secondItem="VTm-gb-G5S" secondAttribute="bottom" constant="28" id="hbZ-tY-ATU"/>
                             <constraint firstItem="cr2-bH-BE3" firstAttribute="leading" secondItem="BJj-Wa-HH2" secondAttribute="leading" id="i64-Ey-upC"/>
+                            <constraint firstItem="Lzi-pg-0SH" firstAttribute="leading" secondItem="cr2-bH-BE3" secondAttribute="leading" id="m0e-vJ-Z2w"/>
+                            <constraint firstItem="Lzi-pg-0SH" firstAttribute="top" secondItem="cr2-bH-BE3" secondAttribute="bottom" constant="35" id="ooK-9X-6Dt"/>
                             <constraint firstItem="cr2-bH-BE3" firstAttribute="trailing" secondItem="BJj-Wa-HH2" secondAttribute="trailing" id="seK-bc-RB3"/>
+                            <constraint firstItem="fHm-Fz-zh2" firstAttribute="centerX" secondItem="Owg-L4-wdm" secondAttribute="centerX" id="vJ9-L7-9Jq"/>
                             <constraint firstItem="BJj-Wa-HH2" firstAttribute="trailing" secondItem="Owg-L4-wdm" secondAttribute="trailing" id="zH4-d9-KvX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="DBp-oG-bwZ">
                         <barButtonItem key="backBarButtonItem" title=" " id="e2n-pQ-bFb"/>
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="ov7-Pw-f9P">
-                            <connections>
-                                <action selector="cancelButtonPressed:" destination="Fmy-Ol-psO" id="WOS-Z4-mNw"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="ov7-Pw-f9P"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OIB-ha-zWM" userLabel="First Responder" sceneMemberID="firstResponder"/>

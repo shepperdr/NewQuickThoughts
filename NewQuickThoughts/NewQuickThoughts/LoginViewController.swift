@@ -55,7 +55,7 @@ class LoginViewController: UIViewController {
                         case .UserDoesNotExist:
                             alertTitle = "This user does not exist"
                         case .InvalidEmail:
-                            alertTitle = "There is not a user associated with this email"
+                            alertTitle = "Invalid email"
                         case .InvalidPassword:
                             alertTitle = "Password does not match email"
                         default:

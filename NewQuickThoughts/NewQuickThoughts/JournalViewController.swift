@@ -189,4 +189,8 @@ class JournalViewController: UIViewController, UITableViewDataSource, UITableVie
         
     }
     
+    @IBAction func unwindToRoot(unwindSegue: UIStoryboardSegue) {
+         self.performSegueWithIdentifier("logoutSegue", sender: self)
+    }
+    
 }

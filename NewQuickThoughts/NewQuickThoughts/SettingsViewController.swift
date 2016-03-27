@@ -11,7 +11,7 @@ import MessageUI
 import Firebase
 
 
-class SettingsViewController: UIViewController,MFMailComposeViewControllerDelegate {
+class SettingsViewController: UIViewController, MFMailComposeViewControllerDelegate {
     
    
     override func viewDidLoad() {
@@ -26,7 +26,7 @@ class SettingsViewController: UIViewController,MFMailComposeViewControllerDelega
         
         let logoutAction = UIAlertAction(title: "Logout", style: .Destructive) { (_) in
             UserController.sharedInstance.logoutUser()
-            self.navigationController?.popToRootViewControllerAnimated(true)
+            self.performSegueWithIdentifier("logoutSegue", sender: self)
         }
         errorAlert.addAction(logoutAction)
         
@@ -57,11 +57,10 @@ class SettingsViewController: UIViewController,MFMailComposeViewControllerDelega
         
         let deleteAction = UIAlertAction(title: "Delete", style: .Destructive) { (_) in
             UserController.sharedInstance.deleteUser()
-            self.navigationController?.popToRootViewControllerAnimated(true)
+            self.performSegueWithIdentifier("logoutSegue", sender: self)
         }
         errorAlert.addAction(deleteAction)
         self.presentViewController(errorAlert, animated: true, completion: nil)
-       
     }
    
     
@@ -96,7 +95,6 @@ class SettingsViewController: UIViewController,MFMailComposeViewControllerDelega
             print("mail sent tapped")
         default:
             break
-            
             
         }
         self.dismissViewControllerAnimated(true, completion: nil)
@@ -146,10 +144,11 @@ class SettingsViewController: UIViewController,MFMailComposeViewControllerDelega
         alert.addAction(action1)
         
         self.presentViewController(alert, animated: true, completion: nil)
-
-        
     }
     
+    @IBAction func unwindToRootView(unwindSegue: UIStoryboardSegue) {
+        
+    }
     
     /*
     // MARK: - Navigation

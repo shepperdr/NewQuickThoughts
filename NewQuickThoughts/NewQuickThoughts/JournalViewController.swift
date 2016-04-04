@@ -17,6 +17,10 @@ class JournalViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+// Robert added. you can remove it.
+        tableView.backgroundView = UIImageView(image: UIImage(named: "pencilAndPad"))
+        tableView.alpha = 0.85
+        tableView.rowHeight = 66
         
         // Make the NavigationController color clear
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
@@ -28,11 +32,6 @@ class JournalViewController: UIViewController, UITableViewDataSource, UITableVie
                 self.tableView.reloadData()
             })
         }
-        
-//        let nc = NSNotificationCenter.defaultCenter()
-        
-//        nc.addObserver(self, selector: #selector(journalsUpdated(_:)), name: journalsUpdateNotification, object: nil)
-        
     }
     
     func getUIDFromReference(specificJournalRef: String) -> String {
@@ -48,6 +47,13 @@ class JournalViewController: UIViewController, UITableViewDataSource, UITableVie
         super.viewWillAppear(animated)
         
         tableView.reloadData()
+    }
+    
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+       // Robert added. you can remove it.
+        cell.textLabel?.font = UIFont.boldSystemFontOfSize(16.0)
+        cell.backgroundColor = UIColor.clearColor()
+        
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

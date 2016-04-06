@@ -14,11 +14,31 @@ class JournalViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var tableView: UITableView!
     
     @IBAction func settingsButtonPressed(sender: AnyObject) {
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
+        
+        let ref = FirebaseController.base
+        if ref.authData != nil {
+            
+            FirebaseController.base.authWithCustomToken(ref.authData.token, withCompletionBlock: { (error, authData) in
+                if error != nil {
+                    // an error occurred while attempting login
+                } else {
+                    let uid = authData.uid
+                    let email = authData.providerData["email"] as? String ?? ""
+                    UserController.sharedInstance.currentUser = User(email: email, password: "password")
+                    UserController.sharedInstance.currentUser?.ref = uid
+                }
+            })
+            
+        } else {
+            // No user is signed in
+            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let viewController = mainStoryboard.instantiateViewControllerWithIdentifier("loginView") as! UINavigationController
+            UIApplication.sharedApplication().keyWindow?.rootViewController = viewController
+        }
         
         // Make the NavigationController color clear
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)

@@ -19,32 +19,6 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let ref = FirebaseController.base
-        if ref.authData != nil {
-            // user authenticated
-            print("\(ref.authData)")
-            print("\(ref.authData.providerData)")
-            print("\(ref.authData.provider)")
-            print("\(ref.authData.uid)")
-            print("\(ref.authData.auth)")
-            print("\(ref.authData.description)")
-            
-            FirebaseController.base.authWithCustomToken(ref.authData.token, withCompletionBlock: { (error, authData) in
-                if error != nil {
-                    // an error occurred while attempting login
-                } else {
-                    let uid = authData.uid
-                    let email = authData.providerData["email"] as? String ?? ""
-                    UserController.sharedInstance.currentUser = User(email: email, password: "password")
-                    UserController.sharedInstance.currentUser?.ref = uid
-                }
-            })
-            
-            self.performSegueWithIdentifier("loginSegue", sender: self)
-        
-        } else {
-            // No user is signed in
-        }
     }
     
     // This adds some design to the Username and password textFields

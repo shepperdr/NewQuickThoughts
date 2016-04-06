@@ -26,7 +26,9 @@ class SettingsViewController: UIViewController, MFMailComposeViewControllerDeleg
         
         let logoutAction = UIAlertAction(title: "Logout", style: .Destructive) { (_) in
             UserController.sharedInstance.logoutUser()
-            self.performSegueWithIdentifier("logoutSegue", sender: self)
+            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let viewController = mainStoryboard.instantiateViewControllerWithIdentifier("loginView") as! UINavigationController
+            UIApplication.sharedApplication().keyWindow?.rootViewController = viewController
         }
         errorAlert.addAction(logoutAction)
         

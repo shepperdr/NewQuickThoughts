@@ -31,7 +31,6 @@
 		9112D9391C0E68220086AF69 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9112D9381C0E68220086AF69 /* libc++.tbd */; };
 		9112D93B1C0E682A0086AF69 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9112D93A1C0E682A0086AF69 /* CFNetwork.framework */; };
 		9112D93D1C0E68380086AF69 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9112D93C1C0E68380086AF69 /* SystemConfiguration.framework */; };
-		91A0F12B1CB2E5A500B64091 /* pencilAndPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 91A0F12A1CB2E5A500B64091 /* pencilAndPad.png */; };
 		C5F3D0031CA3153600A6CB34 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F3D0021CA3153600A6CB34 /* ForgotPasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -62,7 +61,6 @@
 		9112D9381C0E68220086AF69 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		9112D93A1C0E682A0086AF69 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		9112D93C1C0E68380086AF69 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		91A0F12A1CB2E5A500B64091 /* pencilAndPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pencilAndPad.png; sourceTree = "<group>"; };
 		C5F3D0021CA3153600A6CB34 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,7 +85,6 @@
 		9112D8F31C0E608F0086AF69 = {
 			isa = PBXGroup;
 			children = (
-				91A0F12A1CB2E5A500B64091 /* pencilAndPad.png */,
 				9112D8FE1C0E608F0086AF69 /* NewQuickThoughts */,
 				918704991C0E6D1B006CBB6F /* Frameworks */,
 				9112D8FD1C0E608F0086AF69 /* Products */,
@@ -226,7 +223,6 @@
 			files = (
 				9112D90A1C0E608F0086AF69 /* LaunchScreen.storyboard in Resources */,
 				9112D9071C0E608F0086AF69 /* Assets.xcassets in Resources */,
-				91A0F12B1CB2E5A500B64091 /* pencilAndPad.png in Resources */,
 				9112D9051C0E608F0086AF69 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

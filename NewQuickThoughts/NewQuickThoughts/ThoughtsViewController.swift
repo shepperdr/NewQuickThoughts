@@ -15,18 +15,8 @@ class ThoughtsViewController: UIViewController, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    // Robert added you can remove it.
-        tableView.backgroundView = UIImageView(image: UIImage(named: "pencilAndPad"))
-        tableView.alpha = 0.85
-        tableView.rowHeight = 66
 
      }
-  // robert added. you can remove it. 
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        cell.textLabel?.font = UIFont.boldSystemFontOfSize(16.0)
-        cell.backgroundColor = UIColor.clearColor()
-        
-    }
     
     func thoughtsUpdated(notification: NSNotification) {
         

@@ -26,7 +26,7 @@
                                         <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vNJ-Gb-S3H" id="6T3-ba-zwx">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
@@ -92,7 +92,7 @@
                                         <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jM2-aI-1wd" id="N5h-B4-AIh">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
@@ -133,6 +133,7 @@
         <!--Enter Thoughts View Controller-->
         <scene sceneID="voN-Ns-Oe9">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J2G-pW-CSb" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="z66-AR-b8i" customClass="EnterThoughtsViewController" customModule="NewQuickThoughts" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5Ai-Ne-XhU"/>
@@ -206,7 +207,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="backgroundView" destination="i34-9m-bak" id="Cx3-3x-k4D"/>
                         <outlet property="bodyTextView" destination="eoA-gg-omw" id="rbd-vc-g6h"/>
                         <outlet property="dateLabel" destination="gKf-u5-plR" id="3wL-57-knW"/>
                         <outlet property="dayOfWeekLabel" destination="pZg-01-PtO" id="wXw-AL-aQ1"/>
@@ -215,7 +215,6 @@
                         <outlet property="titleTextField" destination="bJM-fK-REk" id="DwA-Ew-9Kd"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="J2G-pW-CSb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2423" y="799"/>
         </scene>
@@ -548,6 +547,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="O89-LV-zfi"/>
-        <segue reference="hZW-gp-Zq3"/>
+        <segue reference="x4u-va-qn0"/>
     </inferredMetricsTieBreakers>
 </document>

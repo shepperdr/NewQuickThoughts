@@ -36,6 +36,10 @@ class EnterThoughtsViewController: UIViewController, UITextFieldDelegate, UIText
         UITextField.appearance().tintColor = UIColor.darkGrayColor()
         UITextView.appearance().tintColor = UIColor.darkGrayColor()
         
+        self.bodyTextView.layer.borderWidth = 1
+        self.bodyTextView.layer.borderColor = UIColor(red:255/255.0, green:116/255.0, blue:124/255.0, alpha: 1.0).CGColor
+        bodyTextView.layer.cornerRadius = 10
+        
     }
     //    Uncomment to get date working again.
         func setDateMonthDayOfWeek() {

@@ -35,11 +35,7 @@ class LoginViewController: UIViewController {
         
         border.borderWidth = width
         
-        emailTextField.layer.addSublayer(border)
-        emailTextField.layer.masksToBounds = true
-        
-        passwordTextField.layer.addSublayer(border)
-        passwordTextField.layer.masksToBounds = true
+        loginButton.layer.cornerRadius = 10
     }
     
     @IBAction func loginButtonPressed(sender: AnyObject) {
